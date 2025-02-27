@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 import TextInput from "../../module/TextInput/TextInput";
+import Select from "../../module/Select/Select";
 
 import MingcuteSearchLine from "../../icons/MingcuteSearchLine";
 
@@ -8,12 +9,14 @@ const Toolbar = (): ReactNode => {
   return (
     <div className="toolbar">
       <TextInput placeholder="search ..." suffixIcon={<MingcuteSearchLine />} />
-      <select name="category" id="category">
-        <option value="all">All</option>
-        <option value="movie">Movie</option>
-        <option value="series">Series</option>
-        <option value="book">Book</option>
-      </select>
+      <Select
+        options={[
+          { value: "all", label: "All" },
+          { value: "movie", label: "Movie" },
+          { value: "series", label: "Series" },
+          { value: "book", label: "Book" },
+        ]}
+      ></Select>
       <button></button>
     </div>
   );

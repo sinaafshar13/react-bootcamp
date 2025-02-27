@@ -6,8 +6,6 @@ import Header from "./components/Header/Header";
 import Toolbar from "./components/Toolbar/Toolbar";
 import Result from "./components/Result/Result";
 
-
-
 const App = (): ReactNode => {
   return (
     <>
