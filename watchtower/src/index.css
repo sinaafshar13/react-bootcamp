@@ -39,7 +39,7 @@ optgroup {
   font: inherit;
 }
 
-body {
+main {
   background-color: var(--color-surface);
   color: var(--color-text);
 
