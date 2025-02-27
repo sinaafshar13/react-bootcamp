@@ -1,0 +1,49 @@
+:root {
+  --color-white: hsl(0, 0%, 97%);
+  --color-black: hsl(0, 0%, 15%);
+
+  --color-blue-dark: #4ea8de;
+
+  --color-surface: var(--color-white);
+  --color-text: var(--color-black);
+
+  &.dark {
+    --color-surface: var(--color-black);
+    --color-text: var(--color-white);
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "inter", system-ui;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+  font: inherit;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+
+  inline-size: min(45rem, 100% - 2rem);
+
+  margin-inline: auto;
+}
