@@ -13,12 +13,23 @@
   --color-purple-dark: hsla(239, 49%, 54%, 1);
   --color-purple: hsla(239, 92%, 73%, 1);
 
-  --color-surface: var(--color-white);
-  --color-text: var(--color-black);
+  --color-surface-100: var(--color-gray-100);
+  --color-surface-200: var(--color-gray-200);
+  --color-surface-300: var(--color-gray-300);
+  --color-surface-400: var(--color-gray-400);
+
+  --color-text-500: var(--color-gray-500);
+  --color-text-600: var(--color-gray-600);
+  --color-text-700: var(--color-gray-700);
 
   &.dark {
-    --color-surface: var(--color-black);
-    --color-text: var(--color-white);
+    --color-surface-100: var(--color-gray-700);
+    --color-surface-200: var(--color-gray-600);
+    --color-surface-300: var(--color-gray-500);
+  
+    --color-text-500: var(--color-gray-300);
+    --color-text-600: var(--color-gray-200);
+    --color-text-700: var(--color-gray-100);
   }
 }
 *,
@@ -36,7 +47,7 @@ html {
 
   font-family: "inter", system-ui;
 
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-200);
 }
 
 input,
@@ -54,7 +65,9 @@ optgroup {
 }
 
 main {
-  color: var(-color-text);
+  z-index: 2;
+  margin-top: 173px;
+  color: var(--color-text);
 
   inline-size: min(45rem, 100% - 2rem);
 
