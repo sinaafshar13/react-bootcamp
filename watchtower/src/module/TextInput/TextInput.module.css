@@ -5,15 +5,15 @@
 
     padding: .5rem;
 
-    background-color: var(--color-surface-100);
+    background-color: var(--color-surface-200);
 
     border: 1px solid var(--color-surface-200);
-    border-radius: .25rem;
+    border-radius: .5rem;
 
     input{
         flex:  1 1 0;
         background-color: transparent;
-        color: var(--color-blue-dark);
+        color: var(--color-text-700);
 
         block-size: 1rem;
 
@@ -34,6 +34,6 @@
         font-size: 1.25rem;
     }
     &:focus-within {
-        outline: 1px solid var(--color-purple-dark);
+        outline: 2px solid var(--color-purple-dark);
     }
 }
