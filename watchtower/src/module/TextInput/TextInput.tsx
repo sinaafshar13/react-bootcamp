@@ -1,14 +1,13 @@
-import { ReactElement, ReactNode } from "react";
+import { ComponentProps, ReactElement, ReactNode } from "react";
 import styles from "./TextInput.module.css";
 
-type Props = {
-  placeholder: string;
+type Props = ComponentProps<"input"> & {
   suffixIcon: ReactElement;
 };
-const TextInput = ({ placeholder, suffixIcon }: Props): ReactNode => {
+const TextInput = ({ suffixIcon, ...otherProps }: Props): ReactNode => {
   return (
     <div className={styles["text-input"]}>
-      <input type="text" placeholder={placeholder} />
+      <input type="text" {...otherProps}/>
       <span className={styles.suffix}>{suffixIcon}</span>
     </div>
   );
