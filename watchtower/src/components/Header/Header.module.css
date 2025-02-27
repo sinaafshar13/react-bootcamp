@@ -1,7 +1,7 @@
 .header {
     display: flex;
     justify-content: center;    
-    background-color: var(--color-black);
+    background-color: #ffff;
     padding: 4.5rem 0 5rem;
     h1{
         color: var(--color-blue-dark);

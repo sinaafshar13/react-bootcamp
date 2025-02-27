@@ -1,8 +1,17 @@
 :root {
-  --color-white: hsl(0, 0%, 97%);
-  --color-black: hsl(0, 0%, 15%);
+  --color-gray-100: hsla(0, 0%, 95%, 1);
+  --color-gray-200: hsla(0, 0%, 85%, 1);
+  --color-gray-300: hsla(0, 0%, 50%, 1);
+  --color-gray-400: hsla(0, 0%, 20%, 1);
+  --color-gray-500: hsla(0, 0%, 15%, 1);
+  --color-gray-600: hsla(0, 0%, 10%, 1);
+  --color-gray-700: hsla(0, 0%, 5%, 1);
+  --color-danger: hsla(0, 75%, 65%, 1);
 
-  --color-blue-dark: #4ea8de;
+  --color-blue-dark: hsla(203, 70%, 58%, 1);
+  --color-blue: hsla(203, 70%, 58%, 1);
+  --color-purple-dark: hsla(239, 49%, 54%, 1);
+  --color-purple: hsla(239, 92%, 73%, 1);
 
   --color-surface: var(--color-white);
   --color-text: var(--color-black);
@@ -22,7 +31,12 @@
 }
 
 html {
+  caret-color: var(--color-blue-dark);
+  accent-color: var(--color-blue-dark);
+
   font-family: "inter", system-ui;
+
+  background-color: var(--color-surface);
 }
 
 input,
@@ -40,8 +54,7 @@ optgroup {
 }
 
 main {
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  color: var(-color-text);
 
   inline-size: min(45rem, 100% - 2rem);
 
