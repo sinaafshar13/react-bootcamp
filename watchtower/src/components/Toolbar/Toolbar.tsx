@@ -4,6 +4,7 @@ import TextInput from "../../module/TextInput/TextInput";
 import Select from "../../module/Select/Select";
 
 import MingcuteSearchLine from "../../icons/MingcuteSearchLine";
+import Button from "../../module/Button/Button";
 
 const Toolbar = (): ReactNode => {
   return (
@@ -17,7 +18,9 @@ const Toolbar = (): ReactNode => {
           { value: "book", label: "Book" },
         ]}
       ></Select>
-      <button></button>
+      <Button variant="solid" size="medium" shape="square">
+        <MingcuteSearchLine />
+      </Button>
     </div>
   );
 };

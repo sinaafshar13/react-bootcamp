@@ -29,11 +29,11 @@
     .suffix{
         display: grid;
 
-        color: var(--color-blue-dark);
+        color: var(--color-primary-dark);
 
         font-size: 1.25rem;
     }
     &:focus-within {
-        outline: 2px solid var(--color-purple-dark);
+        outline: 2px solid var(--color-secondary-dark);
     }
 }

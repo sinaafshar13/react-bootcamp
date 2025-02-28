@@ -6,8 +6,8 @@
   select {
     appearance: none;
 
-    background-color: var(--color-blue);
-    color: var(--color-text-700);
+    background-color: var(--color-primary);
+    color: var(--color-gray-100);
 
     block-size: 100%;
     inline-size: 100%;
@@ -27,8 +27,8 @@
     transition: all .1s ease-in;
 
     option {
-      background-color: var(--color-blue);
-      color: var(--color-text-600);
+      background-color: var(--color-primary);
+      color: var(--color-gray-100);
 
       cursor: pointer;
     }
@@ -36,12 +36,15 @@
     &:focus {
       outline: none;
     }
+    &:hover {
+      background-color: var(--color-primary-dark);
+    }
   }
 
   &::after {
     content: "▼";
 
-    color: var(--color-text-600);
+    color: var(--color-gray-100);
 
     position: absolute;
     inset-block-start: 50%;
@@ -55,26 +58,24 @@
   }
   &.solid {
     select {
-      background-color: var(--color-blue-dark);
-      color: var(--color-text-700);
+      background-color: var(--color-primary-dark);
+      color: var(--color-gray-100);
     }
 
     &::after {
-      color: var(--color-text-700);
+      color: var(--color-gray-100);
     }
   }
 
   &.outlined {
     select {
       background-color: transparent;
-      color: var(--color-blue-dark);
+      color: var(--color-primary-dark);
     }
 
     &::after {
-      color: var(--color-blue-dark);
+      color: var(--color-primary-dark);
     }
   }
 }
-select:hover {
-  background-color: var(--color-blue-dark)
-}
+
