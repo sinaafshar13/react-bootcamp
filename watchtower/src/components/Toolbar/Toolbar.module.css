@@ -1,0 +1,6 @@
+.toolbar {
+    display: grid;
+    grid-template-columns: minmax(200px, 90%) minmax(90px,10%) max-content;
+    gap: 1rem;
+    justify-content: space-between;
+}

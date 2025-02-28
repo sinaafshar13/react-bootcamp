@@ -48,13 +48,16 @@
 
     position: absolute;
     inset-block-start: 50%;
-    inset-inline-end: 0.5rem;
+    inset-inline-end: 0.75rem;
 
     transform: translateY(-50%);
 
     font-size: 0.75em;
 
     pointer-events: none;
+  }
+  &::after:focus{
+    transform: rotate(180deg);
   }
   &.solid {
     select {

@@ -8,7 +8,7 @@
   --color-gray-700: hsla(0, 0%, 5%, 1);
   --color-danger: hsla(0, 75%, 65%, 1);
 
-  --color-primary-dark: hsla(203, 69%, 37%, 1);
+  --color-primary-dark: hsla(203, 70%, 50%, 1);
   --color-primary: hsla(203, 70%, 58%, 1);
   --color-secondary-dark: hsla(239, 49%, 54%, 1);
   --color-secondary: hsla(239, 92%, 73%, 1);
@@ -69,7 +69,7 @@ main {
   margin-top: 173px;
   color: var(--color-text);
 
-  inline-size: min(45rem, 100% - 2rem);
+  inline-size: min(46rem, 100% - 2rem);
 
   margin-inline: auto;
 }
