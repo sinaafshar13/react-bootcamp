@@ -1,7 +1,7 @@
 .select {
   position: relative;
 
-  border-radius: 5px;
+  border-radius: .5rem;
 
   select {
     appearance: none;
@@ -10,15 +10,15 @@
     color: var(--color-gray-100);
 
     block-size: 100%;
-    inline-size: 100%;
+    inline-size: 6rem;
 
-    padding: 0.5rem;
+    padding-inline: 1rem;
     padding-inline-end: calc(0.5rem + 1ch + 0.5rem);
 
     border: none;
     border-radius: inherit;
 
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     line-height: 1.4;
 
@@ -56,9 +56,7 @@
 
     pointer-events: none;
   }
-  &::after:focus{
-    transform: rotate(180deg);
-  }
+  
   &.solid {
     select {
       background-color: var(--color-primary-dark);

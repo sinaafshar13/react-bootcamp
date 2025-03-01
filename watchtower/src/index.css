@@ -1,7 +1,7 @@
 :root {
-  --color-gray-100: hsla(0, 0%, 95%, 1);
-  --color-gray-200: hsla(0, 0%, 85%, 1);
-  --color-gray-300: hsla(0, 0%, 50%, 1);
+  --color-gray-100: hsla(0, 0%, 100%, 1);
+  --color-gray-200: hsla(0, 0%, 97%, 1);
+  --color-gray-300: hsla(0, 0%, 90%, 1);
   --color-gray-400: hsla(0, 0%, 20%, 1);
   --color-gray-500: hsla(0, 0%, 15%, 1);
   --color-gray-600: hsla(0, 0%, 10%, 1);
@@ -11,7 +11,7 @@
   --color-primary-dark: hsla(203, 70%, 50%, 1);
   --color-primary: hsla(203, 70%, 58%, 1);
   --color-secondary-dark: hsla(239, 49%, 54%, 1);
-  --color-secondary: hsla(239, 92%, 73%, 1);
+  --color-secondary: rgb(179, 96, 251);
 
   --color-surface-100: var(--color-gray-100);
   --color-surface-200: var(--color-gray-200);
@@ -26,7 +26,7 @@
     --color-surface-100: var(--color-gray-700);
     --color-surface-200: var(--color-gray-600);
     --color-surface-300: var(--color-gray-500);
-  
+
     --color-text-500: var(--color-gray-300);
     --color-text-600: var(--color-gray-200);
     --color-text-700: var(--color-gray-100);
@@ -47,7 +47,17 @@ html {
 
   font-family: "inter", system-ui;
 
-  background-color: var(--color-surface-300);
+  background-color: var(--color-surface-200);
+}
+
+main {
+  z-index: 2;
+  margin-top: 163px;
+  color: var(--color-text);
+
+  inline-size: min(46rem, 100% - 2rem);
+
+  margin-inline: auto;
 }
 
 input,
@@ -64,12 +74,6 @@ optgroup {
   font: inherit;
 }
 
-main {
-  z-index: 2;
-  margin-top: 173px;
-  color: var(--color-text);
-
-  inline-size: min(46rem, 100% - 2rem);
-
-  margin-inline: auto;
+li {
+  list-style: none;
 }

@@ -2,6 +2,8 @@
   display: inline-grid;
   place-content: center;
 
+  inline-size: 3.5rem;
+
   cursor: pointer;
 
   transition: all 0.1s ease-in;
@@ -37,11 +39,39 @@
     }
   }
 
+  &.ghost {
+    background-color: transparent;
+
+    border: none;
+
+    inline-size: 1.5rem;
+
+    &:hover,
+    &:focus {
+      color: var(--color-primary-dark);
+      outline: none;
+    }
+  }
+
+  &.danger:hover {
+    color: var(--color-danger);
+
+  }
+  &.small{
+    block-size: 1.25rem;
+
+    svg {
+      block-size: 1.25rem;
+    }
+  }
+
   &.medium {
-      svg {
-        block-size: 1.5rem;
-        inline-size: auto;
-      }
+    block-size: 2.25rem;
+
+    svg {
+      block-size: 1.25rem;
+      inline-size: auto;
+    }
   }
 
   &.large {
@@ -63,12 +93,7 @@
 
   &.rectangle,
   &.square {
-    border-radius: 0.25rem;
-  }
-
-  &.square,
-  &.circle {
-    aspect-ratio: 1 / 1;
+    border-radius: 0.5rem;
   }
 
   &.circle {

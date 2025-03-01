@@ -3,8 +3,9 @@ import { ComponentProps, ReactNode } from "react";
 import styles from "./Button.module.css";
 import clsx from "clsx";
 
-type Variant = "solid" | "outlined";
-type Size = "medium" | "large";
+type Variant = "solid" | "outlined" | "ghost";
+type Size = "small" | "medium" | "large";
+type color = "primary" | "danger";
 type Shape = "rectangle" | "square" | "circle";
 
 type Props = ComponentProps<"button"> & {
@@ -17,6 +18,7 @@ const Button = ({
   variant = "solid",
   size = "medium",
   shape = "rectangle",
+  color = "primary",
   className,
   children,
   ...otherProps
@@ -27,6 +29,7 @@ const Button = ({
         styles.button,
         styles[variant],
         styles[size],
+        styles[color],
         styles[shape],
         className
       )}

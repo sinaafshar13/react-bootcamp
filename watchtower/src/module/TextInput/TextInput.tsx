@@ -1,13 +1,19 @@
 import { ComponentProps, ReactElement, ReactNode } from "react";
+
 import styles from "./TextInput.module.css";
+import clsx from "clsx";
 
 type Props = ComponentProps<"input"> & {
   suffixIcon: ReactElement;
 };
-const TextInput = ({ suffixIcon, ...otherProps }: Props): ReactNode => {
+const TextInput = ({
+  suffixIcon,
+  className,
+  ...otherProps
+}: Props): ReactNode => {
   return (
-    <div className={styles["text-input"]}>
-      <input type="text" {...otherProps}/>
+    <div className={clsx(styles["text-input"], className)}>
+      <input type="text" {...otherProps} />
       <span className={styles.suffix}>{suffixIcon}</span>
     </div>
   );
