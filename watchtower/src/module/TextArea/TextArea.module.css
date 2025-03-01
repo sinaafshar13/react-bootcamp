@@ -4,8 +4,8 @@
   background-color: var(--color-surface-300);
 
   min-block-size: 3em;
-
   min-inline-size: 100%;
+  max-block-size: 10em;
 
   padding: 1rem;
 

@@ -10,6 +10,8 @@
 
   --color-primary-dark: hsla(203, 70%, 50%, 1);
   --color-primary: hsla(203, 70%, 58%, 1);
+  --color-primary-fade: hsla(203, 70%, 95%, 1);
+
   --color-secondary-dark: hsla(239, 49%, 54%, 1);
   --color-secondary: rgb(179, 96, 251);
 
