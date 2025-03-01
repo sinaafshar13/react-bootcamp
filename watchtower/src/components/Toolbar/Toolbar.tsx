@@ -13,7 +13,7 @@ import MingcuteMoonLine from "../../icons/MingcuteMoonLine";
 const Toolbar = (): ReactNode => {
   return (
     <div className={styles.toolbar}>
-      <TextInput className={styles.input} placeholder="search ..." suffixIcon={<MingcuteSearchLine />} />
+      <TextInput className={styles.input} placeholder="Search books and media..." suffixIcon={<MingcuteSearchLine />} />
       <Select
         options={[
           { value: "all", label: "All" },

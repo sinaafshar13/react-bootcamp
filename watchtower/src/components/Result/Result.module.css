@@ -2,12 +2,16 @@
   margin-top: 3rem;
 
   .task {
-    color: var(--color-secondary);
+    color: var(--color-secondary-dark);
     display: flex;
     justify-content: space-between;
 
     font-size: 0.75rem;
     font-weight: 700;
+
+    .ahead {
+      color: var(--color-primary-dark);
+    }
   }
 
   li {
@@ -26,9 +30,7 @@
     border-radius: 0.5rem;
 
     h2 {
-
       font-size: 0.75rem;
-
     }
   }
 }
