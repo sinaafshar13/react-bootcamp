@@ -43,10 +43,10 @@ const Result = (): ReactNode => {
           <li className={styles.title}>
             <h2>{item.title}</h2>
             <div className={styles.actions}>
-              <Button  variant="ghost" size="small">
+              <Button color="primary" variant="ghost" size="small">
                 <MingcuteEditLine/>
               </Button>
-              <Button  variant="ghost" size="small" color="danger">
+              <Button  color="danger" variant="ghost" size="small" >
                 <MingcuteDelete2Line />
               </Button>
             </div>
