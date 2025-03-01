@@ -5,6 +5,7 @@ import Button from "../../module/Button/Button";
 import MingcuteAddFill from "../../icons/MingcuteAddFill";
 import TextInput from "../../module/TextInput/TextInput";
 import TextArea from "../../module/TextArea/TextArea";
+import DateInput from "../../module/DateInput/DateInput";
 
 const Create = (): ReactNode => {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -32,6 +33,7 @@ const Create = (): ReactNode => {
           <h3 className={styles.title}>Create a New Source</h3>
           <TextInput placeholder="Input your book or media ..."></TextInput>
           <TextArea placeholder="Input your description ..."></TextArea>
+          <DateInput />
           <div className={styles.actions}>
             <Button onClick={cancelClickHandler} type="submit"  color="danger" variant="outlined" shape="rectangle" size="large">Cancel</Button>
             <Button variant="solid" shape="rectangle" size="large">Apply</Button>
