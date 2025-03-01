@@ -4,6 +4,7 @@ import styles from "./Create.module.css";
 import Button from "../../module/Button/Button";
 import MingcuteAddFill from "../../icons/MingcuteAddFill";
 import TextInput from "../../module/TextInput/TextInput";
+import TextArea from "../../module/TextArea/TextArea";
 
 const Create = (): ReactNode => {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -11,6 +12,10 @@ const Create = (): ReactNode => {
   const addButtonClickHandler = (): void => {
     dialogRef.current?.showModal();
   };
+
+  const cancelClickHandler = (): void => {
+    dialogRef.current?.close();
+  }
   return (
     <div className={styles.create}>
       <Button
@@ -25,9 +30,10 @@ const Create = (): ReactNode => {
       <dialog ref={dialogRef}>
         <div className={styles.content}>
           <h3 className={styles.title}>Create a New Source</h3>
-          <TextInput placeholder="Input your book or media"></TextInput>
+          <TextInput placeholder="Input your book or media ..."></TextInput>
+          <TextArea placeholder="Input your description ..."></TextArea>
           <div className={styles.actions}>
-            <Button type="submit"  color="danger" variant="outlined" shape="rectangle" size="large">Cancel</Button>
+            <Button onClick={cancelClickHandler} type="submit"  color="danger" variant="outlined" shape="rectangle" size="large">Cancel</Button>
             <Button variant="solid" shape="rectangle" size="large">Apply</Button>
           </div>
         </div>
