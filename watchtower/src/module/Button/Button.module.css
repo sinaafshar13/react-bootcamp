@@ -98,5 +98,7 @@
 
   &.circle {
     border-radius: 999rem;
+    
+    block-size: 3.5rem;
   }
 }

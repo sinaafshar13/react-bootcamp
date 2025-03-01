@@ -42,22 +42,30 @@
 }
 
 html {
+  background-color: var(--color-surface-200);
+
   caret-color: var(--color-primary-dark);
   accent-color: var(--color-primary-dark);
 
-  font-family: "inter", system-ui;
+  position: relative;
 
-  background-color: var(--color-surface-200);
+  font-family: "Inter", system-ui;
 }
 
 main {
-  z-index: 2;
-  margin-top: 163px;
   color: var(--color-text);
+
+  position: relative;
+
+  margin-top: 163px;
 
   inline-size: min(46rem, 100% - 2rem);
 
   margin-inline: auto;
+
+  height: 80dvh;
+
+  z-index: 2;
 }
 
 input,
