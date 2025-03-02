@@ -17,17 +17,17 @@ const media: Media[] = [
   },
   {
     id: "2",
-    title: "A million dollar baby",
+    title: "Mulholland drive",
     description: "this is about a girl who wants to be a boxer ...",
     date: new Date(2005, 1, 14),
     category: "movie",
   },
   {
     id: "3",
-    title: "A million dollar baby",
+    title: "Better call Saul",
     description: "this is about a girl who wants to be a boxer ...",
     date: new Date(2005, 1, 14),
-    category: "movie",
+    category: "series",
   },
 ];
 

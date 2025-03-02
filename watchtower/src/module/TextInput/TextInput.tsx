@@ -1,10 +1,11 @@
 import { ComponentProps, ReactElement, ReactNode } from "react";
 
 import styles from "./TextInput.module.css";
+
 import clsx from "clsx";
 
 type Props = ComponentProps<"input"> & {
-  suffixIcon: ReactElement;
+  suffixIcon?: ReactElement;
 };
 const TextInput = ({
   suffixIcon,
@@ -14,9 +15,9 @@ const TextInput = ({
   return (
     <div className={clsx(styles["text-input"], className)}>
       <input type="text" {...otherProps} />
-      <span className={styles.suffix}>{suffixIcon}</span>
+      {suffixIcon && <span className={styles.suffix}>{suffixIcon}</span>}
     </div>
-  );
+  );  
 };
 
 export default TextInput;

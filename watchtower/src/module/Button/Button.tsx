@@ -1,14 +1,16 @@
 import { ComponentProps, ReactNode } from "react";
 
 import styles from "./Button.module.css";
+
 import clsx from "clsx";
 
 type Variant = "solid" | "outlined" | "ghost";
 type Size = "small" | "medium" | "large";
-type color = "primary" | "danger";
+type Color = "primary" | "danger";
 type Shape = "rectangle" | "square" | "circle";
 
 type Props = ComponentProps<"button"> & {
+  color?:Color;
   variant?: Variant;
   size?: Size;
   shape?: Shape;
