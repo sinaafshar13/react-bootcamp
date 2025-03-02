@@ -1,4 +1,4 @@
-import { Children, ComponentProps, ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 
 import styles from "./TextArea.module.css";
 
