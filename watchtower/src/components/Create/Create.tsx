@@ -6,6 +6,7 @@ import MingcuteAddFill from "../../icons/MingcuteAddFill";
 import TextInput from "../../module/TextInput/TextInput";
 import TextArea from "../../module/TextArea/TextArea";
 import DateInput from "../../module/DateInput/DateInput";
+import Select from "../../module/Select/Select";
 
 const Create = (): ReactNode => {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -16,7 +17,7 @@ const Create = (): ReactNode => {
 
   const cancelClickHandler = (): void => {
     dialogRef.current?.close();
-  }
+  };
   return (
     <div className={styles.create}>
       <Button
@@ -34,9 +35,28 @@ const Create = (): ReactNode => {
           <TextInput placeholder="Input your book or media ..."></TextInput>
           <TextArea placeholder="Input your description ..."></TextArea>
           <DateInput />
+          <Select
+            variant="outlined"
+            options={[
+              { value: "movie", label: "Movie" },
+              { value: "series", label: "Series" },
+              { value: "book", label: "Book" },
+            ]}
+          ></Select>
           <div className={styles.actions}>
-            <Button onClick={cancelClickHandler} type="submit"  color="danger" variant="outlined" shape="rectangle" size="large">Cancel</Button>
-            <Button variant="solid" shape="rectangle" size="large">Apply</Button>
+            <Button
+              onClick={cancelClickHandler}
+              type="submit"
+              color="danger"
+              variant="outlined"
+              shape="rectangle"
+              size="large"
+            >
+              Cancel
+            </Button>
+            <Button variant="solid" shape="rectangle" size="large">
+              Apply
+            </Button>
           </div>
         </div>
       </dialog>
