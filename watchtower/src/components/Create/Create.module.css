@@ -1,0 +1,42 @@
+.create {
+  position: absolute;
+
+  bottom: 1rem;
+  right: 1rem;
+
+  dialog {
+    inline-size: 100%;
+    max-inline-size: 30rem;
+
+    border-radius: 0.5rem;
+
+    margin: auto;
+
+    border: none;
+
+    &::backdrop {
+      backdrop-filter: blur(1px);
+    }
+
+    .content {
+      display: grid;
+      gap: 1rem;
+
+      padding: 1rem;
+
+      h3 {
+        color: var(--color-primary);
+        text-align: center;
+
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+}
