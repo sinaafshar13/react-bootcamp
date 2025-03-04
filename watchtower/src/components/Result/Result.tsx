@@ -9,31 +9,9 @@ import Button from "../../module/Button/Button";
 import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
 
-const media: Media[] = [
-  {
-    id: "1",
-    title: "A million dollar baby",
-    description: "this is about a girl who wants to be a boxer ...",
-    date: new Date(2005, 1, 14),
-    category: "movie",
-  },
-  {
-    id: "2",
-    title: "Mulholland drive",
-    description: "this is about a girl who wants to be a boxer ...",
-    date: new Date(2005, 1, 14),
-    category: "movie",
-  },
-  {
-    id: "3",
-    title: "Better call Saul",
-    description: "this is about a girl who wants to be a boxer ...",
-    date: new Date(2005, 1, 14),
-    category: "series",
-  },
-];
+type Props = { media: Media[] };
 
-const Result = (): ReactNode => {
+const Result = ({ media }: Props): ReactNode => {
   return (
     <div className={styles.result}>
       <div className={styles.task}>
@@ -46,9 +24,9 @@ const Result = (): ReactNode => {
             <h2>{item.title}</h2>
             <div className={styles.actions}>
               <Button color="primary" variant="ghost" size="small">
-                <MingcuteEditLine/>
+                <MingcuteEditLine />
               </Button>
-              <Button  color="danger" variant="ghost" size="small" >
+              <Button color="danger" variant="ghost" size="small">
                 <MingcuteDelete2Line />
               </Button>
             </div>
