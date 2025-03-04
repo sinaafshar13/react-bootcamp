@@ -42,7 +42,7 @@ const Result = (): ReactNode => {
       </div>
       <ul>
         {media.map((item) => (
-          <li className={styles.title}>
+          <li key={item.id} className={styles.title}>
             <h2>{item.title}</h2>
             <div className={styles.actions}>
               <Button color="primary" variant="ghost" size="small">

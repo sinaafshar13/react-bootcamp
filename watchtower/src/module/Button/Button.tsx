@@ -18,7 +18,7 @@ type Props = ComponentProps<"button"> & {
 
 const Button = ({
   variant = "solid",
-  size = "medium",
+  size = "large",
   shape = "rectangle",
   color = "primary",
   className,
