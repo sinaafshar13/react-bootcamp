@@ -1,4 +1,4 @@
-import { Dispatch, FormEvent, ReactNode, SetStateAction, useRef } from "react";
+import { FormEvent, ReactNode, useContext, useRef } from "react";
 
 import TextInput from "../../module/TextInput/TextInput";
 import TextArea from "../../module/TextArea/TextArea";
@@ -8,16 +8,18 @@ import Button from "../../module/Button/Button";
 
 import styles from "./CreateForm.module.css";
 
-import { Media } from "../../types/media";
 import { Category } from "../../types/category";
+import { MediaContext } from "../../App";
+import { Media } from "../../types/media";
 
 type Props = {
-  setMedia: Dispatch<SetStateAction<Media[]>>;
   onCancel: VoidFunction;
-  onSubmit: VoidFunction;
 };
 
-const CreateForm = ({onCancel,onSubmit, setMedia }: Props): ReactNode => {
+const CreateForm = ({ onCancel }: Props): ReactNode => {  
+
+  const { setMedia} = useContext(MediaContext);
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const cancelClickHandler = (): void => {
@@ -38,7 +40,7 @@ const CreateForm = ({onCancel,onSubmit, setMedia }: Props): ReactNode => {
 
     setMedia((prevMedia) => [...prevMedia, media]);
 
-    onSubmit();
+    onCancel();
   };
 
   return (

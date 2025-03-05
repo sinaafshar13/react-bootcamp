@@ -1,19 +1,18 @@
-import { Dispatch, ReactNode, SetStateAction, useRef } from "react";
+import { ReactNode, useContext, useRef } from "react";
 
 import styles from "./Create.module.css";
 
 import Button from "../../module/Button/Button";
 import CreateForm from "../CreateForm/CreateForm";
 
+import { MediaContext } from "../../App";
+
 import MingcuteAddFill from "../../icons/MingcuteAddFill";
 
-import { Media } from "../../types/media";
 
-type Props = {
-  setMedia: Dispatch<SetStateAction<Media[]>>;
-};
+const Create = (): ReactNode => {
+  const { setMedia } = useContext(MediaContext);
 
-const Create = ({ setMedia }: Props): ReactNode => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const addButtonClickHandler = (): void => {
@@ -29,9 +28,6 @@ const Create = ({ setMedia }: Props): ReactNode => {
       <dialog ref={dialogRef}>
         <CreateForm
           onCancel={() => {
-            dialogRef.current?.close();
-          }}
-          onSubmit={() => {
             dialogRef.current?.close();
           }}
           setMedia={setMedia}

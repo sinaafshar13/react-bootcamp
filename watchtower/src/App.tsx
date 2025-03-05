@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from "react";
 
 import "./App.css";
 
@@ -6,7 +6,18 @@ import Header from "./components/Header/Header";
 import Toolbar from "./components/Toolbar/Toolbar";
 import Result from "./components/Result/Result";
 import Create from "./components/Create/Create";
+
 import { Media } from "./types/media";
+
+type mediaContextValue = {
+  media: Media[];
+  setMedia: Dispatch<SetStateAction<Media[]>>;
+};
+
+export const MediaContext = createContext<mediaContextValue>({
+  media: [],
+  setMedia: ()=>{},
+});
 
 const App = (): ReactNode => {
   const [media, setMedia] = useState<Media[]>([
@@ -33,14 +44,14 @@ const App = (): ReactNode => {
     },
   ]);
   return (
-    <>
+    <MediaContext.Provider value={{media , setMedia}}>
       <Header />
       <main>
         <Toolbar />
-        <Result media={media}/>
-        <Create setMedia={setMedia}/>
+        <Result />
+        <Create />
       </main>
-    </>
+    </MediaContext.Provider>
   );
 };
 

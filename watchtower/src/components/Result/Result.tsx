@@ -1,6 +1,4 @@
-import { ReactNode } from "react";
-
-import { Media } from "../../types/media";
+import { ReactNode, useContext } from "react";
 
 import styles from "./Result.module.css";
 
@@ -8,10 +6,12 @@ import Button from "../../module/Button/Button";
 
 import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
+import { MediaContext } from "../../App";
 
-type Props = { media: Media[] };
+const Result = (): ReactNode => {
+  
+  const { media } = useContext(MediaContext);
 
-const Result = ({ media }: Props): ReactNode => {
   return (
     <div className={styles.result}>
       <div className={styles.task}>
