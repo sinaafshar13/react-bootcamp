@@ -4,12 +4,14 @@ import styles from "./Result.module.css";
 
 import Button from "../../module/Button/Button";
 
+import { MediaContext } from "../../context/media-context";
+
 import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
-import { MediaContext } from "../../App";
+
 
 const Result = (): ReactNode => {
-  
+
   const { media } = useContext(MediaContext);
 
   return (

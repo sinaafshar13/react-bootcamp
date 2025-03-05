@@ -1,4 +1,4 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from "react";
+import { ReactNode, useState } from "react";
 
 import "./App.css";
 
@@ -8,16 +8,9 @@ import Result from "./components/Result/Result";
 import Create from "./components/Create/Create";
 
 import { Media } from "./types/media";
+import { MediaContext } from "./context/media-context";
 
-type mediaContextValue = {
-  media: Media[];
-  setMedia: Dispatch<SetStateAction<Media[]>>;
-};
 
-export const MediaContext = createContext<mediaContextValue>({
-  media: [],
-  setMedia: ()=>{},
-});
 
 const App = (): ReactNode => {
   const [media, setMedia] = useState<Media[]>([

@@ -1,14 +1,13 @@
 import { ReactNode, useContext, useRef } from "react";
 
+import { MediaContext } from "../../context/media-context";
+
 import styles from "./Create.module.css";
 
 import Button from "../../module/Button/Button";
 import CreateForm from "../CreateForm/CreateForm";
 
-import { MediaContext } from "../../App";
-
 import MingcuteAddFill from "../../icons/MingcuteAddFill";
-
 
 const Create = (): ReactNode => {
   const { setMedia } = useContext(MediaContext);

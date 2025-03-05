@@ -1,15 +1,16 @@
 import { FormEvent, ReactNode, useContext, useRef } from "react";
 
+import { MediaContext } from "../../context/media-context";
+
+import styles from "./CreateForm.module.css";
+
 import TextInput from "../../module/TextInput/TextInput";
 import TextArea from "../../module/TextArea/TextArea";
 import DateInput from "../../module/DateInput/DateInput";
 import Select from "../../module/Select/Select";
 import Button from "../../module/Button/Button";
 
-import styles from "./CreateForm.module.css";
-
 import { Category } from "../../types/category";
-import { MediaContext } from "../../App";
 import { Media } from "../../types/media";
 
 type Props = {
