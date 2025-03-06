@@ -1,7 +1,5 @@
 import { ReactNode, useContext, useRef } from "react";
 
-import { MediaContext } from "../../context/media-context";
-
 import styles from "./Create.module.css";
 
 import Button from "../../module/Button/Button";
@@ -10,8 +8,6 @@ import CreateForm from "../CreateForm/CreateForm";
 import MingcuteAddFill from "../../icons/MingcuteAddFill";
 
 const Create = (): ReactNode => {
-  const { setMedia } = useContext(MediaContext);
-
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const addButtonClickHandler = (): void => {
@@ -29,7 +25,6 @@ const Create = (): ReactNode => {
           onCancel={() => {
             dialogRef.current?.close();
           }}
-          setMedia={setMedia}
         ></CreateForm>
       </dialog>
     </div>

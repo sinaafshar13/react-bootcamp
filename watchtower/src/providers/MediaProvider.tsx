@@ -1,33 +1,22 @@
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
+
 import { MediaContext } from "../context/media-context";
+
 import { Media } from "../types/media";
+
+import { MEDIA_LOCAL_STORAGE_KEY } from "../constants/local-storage-keys";
+
+type LocalStorageMedia = Omit<Media, "data"> & { data: string };
 
 type Props = PropsWithChildren;
 
-const MediaProvider = ({ children }: Props) => {
-  const [media, setMedia] = useState<Media[]>([
-    {
-      id: "1",
-      title: "A million dollar baby",
-      description: "this is about a girl who wants to be a boxer ...",
-      date: new Date(2005, 1, 14),
-      category: "movie",
-    },
-    {
-      id: "2",
-      title: "Mulholland drive",
-      description: "this is about a girl who wants to be a boxer ...",
-      date: new Date(2005, 1, 14),
-      category: "movie",
-    },
-    {
-      id: "3",
-      title: "Better call Saul",
-      description: "this is about a girl who wants to be a boxer ...",
-      date: new Date(2005, 1, 14),
-      category: "series",
-    },
-  ]);
+const MediaProvider = ({ children }: Props): ReactNode => {
+  const [media, setMedia] = useState<Media[]>(loadMediaInitialState);
+
+  useEffect(() => {
+    localStorage.setItem(MEDIA_LOCAL_STORAGE_KEY, JSON.stringify(media));
+  }, [media]);
+
   return (
     <MediaContext.Provider value={{ media, setMedia }}>
       {children}
@@ -36,3 +25,15 @@ const MediaProvider = ({ children }: Props) => {
 };
 
 export default MediaProvider;
+
+const loadMediaInitialState = (): Media[] => {
+  const items = localStorage.getItem(MEDIA_LOCAL_STORAGE_KEY);
+
+  if (!items) {
+    return [];
+  }
+  return JSON.parse(items).map((item: LocalStorageMedia) => ({
+    ...item,
+    date: new Date(item.date),
+  }));
+};

@@ -40,7 +40,7 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
     };
 
     setMedia((prevMedia) => [...prevMedia, media]);
-
+    
     onCancel();
   };
 
