@@ -8,17 +8,20 @@ import Header from "./components/Header/Header";
 import Toolbar from "./components/Toolbar/Toolbar";
 import Result from "./components/Result/Result";
 import Create from "./components/Create/Create";
+import ThemeProvider from "./providers/ThemeProvider";
 
 const App = (): ReactNode => {
   return (
-    <MediaProvider>
-      <Header />
-      <main>
-        <Toolbar />
-        <Result />
-        <Create />
-      </main>
-    </MediaProvider>
+    <ThemeProvider>
+      <MediaProvider>
+        <Header />
+        <main>
+          <Toolbar />
+          <Result />
+          <Create />
+        </main>
+      </MediaProvider>
+    </ThemeProvider>
   );
 };
 

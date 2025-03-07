@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
+
+import { ThemeContext } from "../../context/theme-context";
 
 import TextInput from "../../module/TextInput/TextInput";
 import Select from "../../module/Select/Select";
@@ -8,8 +10,11 @@ import styles from "./Toolbar.module.css";
 
 import MingcuteSearchLine from "../../icons/MingcuteSearchLine";
 import MingcuteMoonLine from "../../icons/MingcuteMoonLine";
+import MingcuteSunLine from "../../icons/MingcuteSunLine";
 
 const Toolbar = (): ReactNode => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <div className={styles.toolbar}>
       <TextInput
@@ -26,8 +31,13 @@ const Toolbar = (): ReactNode => {
           { value: "book", label: "Book" },
         ]}
       ></Select>
-      <Button variant="solid" size="large" shape="square">
-        <MingcuteMoonLine />
+      <Button
+        variant="solid"
+        size="large"
+        shape="square"
+        onClick={() => toggleTheme()}
+      >
+        {theme === "dark" ? <MingcuteSunLine /> : <MingcuteMoonLine />}
       </Button>
     </div>
   );
