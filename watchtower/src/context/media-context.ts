@@ -1,12 +1,14 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 import { Media } from "../types/media"; 
 
-type mediaContextValue = {
+type MediaContextValue = {
   media: Media[];
-  setMedia: Dispatch<SetStateAction<Media[]>>;
+  createMedia: (media:Media) => void ; 
+  removeMedia: (id: string) => void;
 };
 
-export const MediaContext = createContext<mediaContextValue>({
+export const MediaContext = createContext<MediaContextValue>({
   media: [],
-  setMedia: ()=>{},
+  createMedia: () => {},
+  removeMedia: () => {},
 });

@@ -17,8 +17,16 @@ const MediaProvider = ({ children }: Props): ReactNode => {
     localStorage.setItem(MEDIA_LOCAL_STORAGE_KEY, JSON.stringify(media));
   }, [media]);
 
+  const createMedia = (media: Media): void => {
+    setMedia((old) => [...old, media]);
+  };
+
+  const removeMedia = (id: string): void => {
+    setMedia((old) => old.filter((x) => x.id !== id));
+  };
+
   return (
-    <MediaContext.Provider value={{ media, setMedia }}>
+    <MediaContext.Provider value={{ media, createMedia, removeMedia }}>
       {children}
     </MediaContext.Provider>
   );

@@ -17,9 +17,8 @@ type Props = {
   onCancel: VoidFunction;
 };
 
-const CreateForm = ({ onCancel }: Props): ReactNode => {  
-
-  const { setMedia} = useContext(MediaContext);
+const CreateForm = ({ onCancel }: Props): ReactNode => {
+  const { createMedia } = useContext(MediaContext);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -33,14 +32,15 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
     const formData = new FormData(e.currentTarget);
 
     const media: Media = {
+      id : crypto.randomUUID(),
       title: formData.get("title") as string,
       description: formData.get("description") as string,
       date: new Date(formData.get("date") as string),
       category: formData.get("category") as Category,
     };
 
-    setMedia((prevMedia) => [...prevMedia, media]);
-    
+    createMedia(media);
+
     onCancel();
   };
 
