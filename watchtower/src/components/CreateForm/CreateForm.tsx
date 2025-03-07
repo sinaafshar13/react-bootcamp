@@ -50,7 +50,7 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
       className={styles["create-form"]}
       onSubmit={formSubmitHandler}
     >
-      <h3 className={styles.title}>Create a New Source</h3>
+      <h3 className={styles.title}>Create a New Media</h3>
       <TextInput
         name="title"
         placeholder="Input your book or media ..."

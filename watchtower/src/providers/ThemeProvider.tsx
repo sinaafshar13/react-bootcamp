@@ -13,6 +13,7 @@ const ThemeProvider = ({ children }: Props): ReactNode => {
 
   useEffect(() => {
     localStorage.setItem(THEME_LOCAL_STORAGE_KEY, theme);
+    document.documentElement.dataset.theme = theme;
   }, [theme]);
 
   const toggleTheme = (): void => {

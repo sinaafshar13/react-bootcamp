@@ -19,7 +19,7 @@ const Toolbar = (): ReactNode => {
     <div className={styles.toolbar}>
       <TextInput
         className={styles.input}
-        placeholder="Search books and media..."
+        placeholder="Search media..."
         suffixIcon={<MingcuteSearchLine />}
       />
       <Select

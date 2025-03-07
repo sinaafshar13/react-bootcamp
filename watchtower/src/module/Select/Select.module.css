@@ -22,7 +22,7 @@
     cursor: pointer;
 
     option {
-      background-color: var(--color-primary-fade);
+      background-color: var(--color-surface-300);
       color: var(--color-primary);
 
       cursor: pointer;
@@ -76,7 +76,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--color-primary-fade);
+        background-color: var(--color-surface-300);
       }
     }
 

@@ -6,10 +6,13 @@
 
   h3 {
     color: var(--color-primary);
+
     text-align: center;
 
     font-size: 1.5rem;
     font-weight: 700;
+
+    margin-block: 1rem;
   }
   .actions {
     display: flex;
