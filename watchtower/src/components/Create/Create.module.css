@@ -2,7 +2,7 @@
   position: absolute;
 
   bottom: 1rem;
-  right: 1rem;
+  right: 0;
 
   dialog {
     background-color: var(--color-surface-100);

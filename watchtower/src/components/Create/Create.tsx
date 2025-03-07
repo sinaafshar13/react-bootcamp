@@ -33,9 +33,7 @@ const Create = (): ReactNode => {
       <Button onClick={addButtonClickHandler} shape="circle">
         <MingcuteAddFill />
       </Button>
-
       <dialog ref={dialogRef}>
-        {/* <CreateForm onCancel={closeModal}></CreateForm> */}
         {editingMedia && <CreateForm onCancel={closeModal} />}
         {!editingMedia && <CreateForm onCancel={closeModal} />}
       </dialog>
