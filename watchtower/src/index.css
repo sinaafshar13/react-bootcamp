@@ -6,14 +6,14 @@
   --color-gray-500: hsla(0, 0%, 15%, 1);
   --color-gray-600: hsla(0, 0%, 10%, 1);
   --color-gray-700: hsla(0, 0%, 5%, 1);
-  --color-danger: hsla(0, 75%, 65%, 1);
+  --color-danger: hsla(0, 80%, 55%, 0.8);
 
-  --color-primary-dark: hsla(203, 70%, 50%, 1);
+  --color-primary-hover: hsla(203, 70%, 40%, 1);
   --color-primary: hsla(203, 70%, 58%, 1);
-  --color-primary-fade: hsla(203, 70%, 95%, 1);
+  --color-primary-fade: hsla(203 70%, 95%, 1);
 
-  --color-secondary-dark: hsla(239, 49%, 54%, 1);
-  --color-secondary: rgb(179, 96, 251);
+  --color-secondary-hover: hsla(239, 55%, 59%, 1);
+  --color-secondary: hsla(239, 92%, 74%, 1);
 
   --color-surface-100: var(--color-gray-100);
   --color-surface-200: var(--color-gray-200);
@@ -32,6 +32,12 @@
     --color-text-500: var(--color-gray-300);
     --color-text-600: var(--color-gray-200);
     --color-text-700: var(--color-gray-100);
+
+    --color-primary-hover: hsla(203, 70%, 58%, 1);
+    --color-primary: hsla(203, 70%, 40%, 1);
+
+    --color-secondary-hover: hsla(239, 92%, 74%, 1);
+    --color-secondary: hsla(239, 55%, 59%, 1);
   }
 }
 *,

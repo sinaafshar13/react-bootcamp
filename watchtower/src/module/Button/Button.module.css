@@ -11,9 +11,11 @@
     outline: none;
   }
 
+  transition: all 0.05s ease-out;
+
   &.primary {
     --button-color: var(--color-primary);
-    --button-color-hover: var(--color-primary-dark);
+    --button-color-hover: var(--color-primary-hover);
   }
 
   &.danger {
@@ -27,8 +29,7 @@
 
     border: none;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: var(--button-color-hover);
 
       outline: none;
@@ -36,17 +37,17 @@
   }
 
   &.outlined {
-    background-color: var(--color-primary-fade);
-    color: var(--color-primary-dark);
+    background-color: var(--color-surface-300);
+    color: var(--color-primary-hover);
 
-    border: 1px solid var(--color-primary-dark);;
+    border: 1px solid var(--color-primary-hover);
 
     &:hover,
     &:focus {
       background-color: var(--button-color-hover);
       color: var(--color-gray-100);
-      
-      border: none;
+
+      border-color: var(--color-danger);
     }
   }
 
