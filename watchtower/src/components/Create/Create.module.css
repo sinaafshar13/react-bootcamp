@@ -2,10 +2,11 @@
   position: absolute;
 
   bottom: 1rem;
-  right: 1rem;
+  right: 0;
 
   dialog {
-    inline-size: 100%;
+    background-color: var(--color-surface-100);
+    inline-size: 90%;
     max-inline-size: 30rem;
 
     border-radius: 0.5rem;
@@ -15,28 +16,7 @@
     border: none;
 
     &::backdrop {
-      backdrop-filter: blur(1px);
-    }
-
-    .content {
-      display: grid;
-      gap: 1rem;
-
-      padding: 1rem;
-
-      h3 {
-        color: var(--color-primary);
-        text-align: center;
-
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-      .actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-      }
+      backdrop-filter: blur(2px);
     }
   }
 }

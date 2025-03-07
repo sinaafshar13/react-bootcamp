@@ -1,0 +1,23 @@
+.create-form {
+  display: grid;
+  gap: 1rem;
+
+  padding: 1rem;
+
+  h3 {
+    color: var(--color-primary);
+
+    text-align: center;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    margin-block: 1rem;
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}

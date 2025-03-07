@@ -1,69 +1,43 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode, useContext, useEffect, useRef } from "react";
 
 import styles from "./Create.module.css";
 
 import Button from "../../module/Button/Button";
-import TextInput from "../../module/TextInput/TextInput";
-import TextArea from "../../module/TextArea/TextArea";
-import DateInput from "../../module/DateInput/DateInput";
-import Select from "../../module/Select/Select";
+import CreateForm from "../CreateForm/CreateForm";
 
 import MingcuteAddFill from "../../icons/MingcuteAddFill";
+import { MediaContext } from "../../context/media-context";
 
 const Create = (): ReactNode => {
+  const { editingMedia, setEditingMedia } = useContext(MediaContext);
+
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (editingMedia) {
+      dialogRef.current?.showModal();
+    }
+  }, [editingMedia]);
 
   const addButtonClickHandler = (): void => {
     dialogRef.current?.showModal();
   };
 
-  const cancelClickHandler = (): void => {
+  const closeModal = () => {
     dialogRef.current?.close();
+    setEditingMedia(null);
   };
+
   return (
     <div className={styles.create}>
-      <Button
-        onClick={addButtonClickHandler}
-        variant="solid"
-        shape="circle"
-        size="large"
-      >
+      <Button onClick={addButtonClickHandler} shape="circle">
         <MingcuteAddFill />
       </Button>
-
       <dialog ref={dialogRef}>
-        <div className={styles.content}>
-          <h3 className={styles.title}>Create a New Source</h3>
-          <TextInput placeholder="Input your book or media ..."></TextInput>
-          <TextArea placeholder="Input your description ..."></TextArea>
-          <DateInput />
-          <Select
-            variant="outlined"
-            options={[
-              { value: "movie", label: "Movie" },
-              { value: "series", label: "Series" },
-              { value: "book", label: "Book" },
-            ]}
-          ></Select>
-          <div className={styles.actions}>
-            <Button
-              onClick={cancelClickHandler}
-              type="submit"
-              color="danger"
-              variant="outlined"
-              shape="rectangle"
-              size="large"
-            >
-              Cancel
-            </Button>
-            <Button variant="solid" shape="rectangle" size="large">
-              Apply
-            </Button>
-          </div>
-        </div>
+        {editingMedia && <CreateForm onCancel={closeModal} />}
+        {!editingMedia && <CreateForm onCancel={closeModal} />}
       </dialog>
     </div>
   );
 };
-
 export default Create;

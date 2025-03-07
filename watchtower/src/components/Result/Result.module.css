@@ -2,15 +2,15 @@
   margin-top: 3rem;
 
   .task {
-    color: var(--color-secondary-dark);
+    color: var(--color-secondary-hover);
     display: flex;
     justify-content: space-between;
 
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 900;
 
     .ahead {
-      color: var(--color-primary-dark);
+      color: var(--color-primary-hover);
     }
   }
 
@@ -31,6 +31,13 @@
 
     h2 {
       font-size: 0.75rem;
+    }
+
+    .actions{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
     }
   }
 }
