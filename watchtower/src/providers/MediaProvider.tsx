@@ -12,13 +12,18 @@ type Props = PropsWithChildren;
 
 const MediaProvider = ({ children }: Props): ReactNode => {
   const [media, setMedia] = useState<Media[]>(loadMediaInitialState);
+  const [editingMedia, setEditingMedia] = useState<Media | null>(null);
 
   useEffect(() => {
     localStorage.setItem(MEDIA_LOCAL_STORAGE_KEY, JSON.stringify(media));
   }, [media]);
 
   const createMedia = (media: Media): void => {
-    setMedia((old) => [...old, media]);
+    setMedia((old) => [...old, {...media}]);
+  };
+
+  const editMedia = (media: Media): void => {
+    setMedia((old) => old.map((x) => (x.id === media.id ? { ...media } : x)));
   };
 
   const removeMedia = (id: string): void => {
@@ -26,7 +31,16 @@ const MediaProvider = ({ children }: Props): ReactNode => {
   };
 
   return (
-    <MediaContext.Provider value={{ media, createMedia, removeMedia }}>
+    <MediaContext.Provider
+      value={{
+        media,
+        createMedia,
+        removeMedia,
+        editingMedia,
+        setEditingMedia,
+        editMedia,
+      }}
+    >
       {children}
     </MediaContext.Provider>
   );

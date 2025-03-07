@@ -9,12 +9,8 @@ import { MediaContext } from "../../context/media-context";
 import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
 
-
 const Result = (): ReactNode => {
-
-  const {removeMedia, media } = useContext(MediaContext);
-
-   
+  const { removeMedia, media, setEditingMedia } = useContext(MediaContext);
 
   return (
     <div className={styles.result}>
@@ -27,10 +23,22 @@ const Result = (): ReactNode => {
           <li key={item.id} className={styles.title}>
             <h2>{item.title}</h2>
             <div className={styles.actions}>
-              <Button color="primary" variant="ghost" size="small">
+              <Button
+                onClick={() => setEditingMedia(item)}
+                color="primary"
+                variant="ghost"
+                size="small"
+              >
                 <MingcuteEditLine />
               </Button>
-              <Button onClick={()=> {removeMedia(item.id)}} color="danger" variant="ghost" size="small">
+              <Button
+                onClick={() => {
+                  removeMedia(item.id);
+                }}
+                color="danger"
+                variant="ghost"
+                size="small"
+              >
                 <MingcuteDelete2Line />
               </Button>
             </div>

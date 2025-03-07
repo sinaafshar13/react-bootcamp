@@ -18,7 +18,7 @@ type Props = {
 };
 
 const CreateForm = ({ onCancel }: Props): ReactNode => {
-  const { createMedia } = useContext(MediaContext);
+  const { createMedia, editingMedia, editMedia } = useContext(MediaContext);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -32,14 +32,18 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
     const formData = new FormData(e.currentTarget);
 
     const media: Media = {
-      id : crypto.randomUUID(),
+      id: editingMedia?.id ?? crypto.randomUUID(),
       title: formData.get("title") as string,
       description: formData.get("description") as string,
       date: new Date(formData.get("date") as string),
       category: formData.get("category") as Category,
     };
 
-    createMedia(media);
+    if (editingMedia) {
+      editMedia(media);
+    } else {
+      createMedia(media);
+    }
 
     onCancel();
   };
@@ -50,16 +54,20 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
       className={styles["create-form"]}
       onSubmit={formSubmitHandler}
     >
-      <h3 className={styles.title}>Create a New Media</h3>
+      <h3 className={styles.title}>
+        {editingMedia ? "Edit Media" : "Create Media"}
+      </h3>
       <TextInput
         name="title"
         placeholder="Input your book or media ..."
+        defaultValue={editingMedia?.title}
       ></TextInput>
       <TextArea
         name="description"
         placeholder="Input your description ..."
+        defaultValue={editingMedia?.description}
       ></TextArea>
-      <DateInput name="date" />
+      <DateInput name="date" defaultValue={toDateString(editingMedia?.date)} />
       <Select
         name="category"
         variant="outlined"
@@ -68,6 +76,7 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
           { value: "series", label: "Series" },
           { value: "book", label: "Book" },
         ]}
+        defaultValue={editingMedia?.category}
       ></Select>
       <div className={styles.actions}>
         <Button
@@ -87,3 +96,15 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
 };
 
 export default CreateForm;
+
+function toDateString(date: Date | undefined): string {
+  if (!date) {
+    return "";
+  }
+
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+}
+
+function pad(text: number): string {
+  return text.toString().padStart(2, "0");
+}
