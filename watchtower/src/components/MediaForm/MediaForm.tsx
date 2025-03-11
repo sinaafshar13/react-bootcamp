@@ -2,7 +2,7 @@ import { FormEvent, ReactNode, useContext, useRef } from "react";
 
 import { MediaContext } from "../../context/media-context";
 
-import styles from "./CreateForm.module.css";
+import styles from "./MediaForm.module.css";
 
 import TextInput from "../../module/TextInput/TextInput";
 import TextArea from "../../module/TextArea/TextArea";
@@ -17,7 +17,7 @@ type Props = {
   onCancel: VoidFunction;
 };
 
-const CreateForm = ({ onCancel }: Props): ReactNode => {
+const MediaForm = ({ onCancel }: Props): ReactNode => {
   const { createMedia, editingMedia, editMedia } = useContext(MediaContext);
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -95,7 +95,7 @@ const CreateForm = ({ onCancel }: Props): ReactNode => {
   );
 };
 
-export default CreateForm;
+export default MediaForm;
 
 function toDateString(date: Date | undefined): string {
   if (!date) {
