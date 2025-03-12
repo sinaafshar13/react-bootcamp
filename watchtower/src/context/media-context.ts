@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 import { Media } from "../types/media";
 
 type MediaContextValue = {
@@ -6,8 +6,6 @@ type MediaContextValue = {
   createMedia: (media: Media) => void;
   removeMedia: (id: string) => void;
   editMedia: (media: Media) => void;
-  editingMedia: Media | null;
-  setEditingMedia: Dispatch<SetStateAction<Media | null>>;
 };
 
 export const MediaContext = createContext<MediaContextValue>({
@@ -15,6 +13,4 @@ export const MediaContext = createContext<MediaContextValue>({
   createMedia: () => {},
   removeMedia: () => {},
   editMedia: () => {},
-  editingMedia: null,
-  setEditingMedia: () => {},
 });

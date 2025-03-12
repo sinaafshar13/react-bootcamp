@@ -1,0 +1,15 @@
+.media-modal {
+  background-color: var(--color-surface-100);
+  inline-size: 90%;
+  max-inline-size: 30rem;
+
+  border-radius: 0.5rem;
+
+  margin: auto;
+
+  border: none;
+
+  &::backdrop {
+    backdrop-filter: blur(2px);
+  }
+}

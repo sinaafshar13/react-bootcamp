@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 
 import styles from "./Create.module.css";
 
@@ -8,6 +8,8 @@ import MingcuteAddFill from "../../icons/MingcuteAddFill";
 import MediaModal from "../MediaModal/MediaModal";
 
 const Create = (): ReactNode => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
   const addButtonClickHandler = (): void => {
     dialogRef.current?.showModal();
   };
@@ -17,7 +19,7 @@ const Create = (): ReactNode => {
       <Button onClick={addButtonClickHandler} shape="circle">
         <MingcuteAddFill />
       </Button>
-      <MediaModal />
+      <MediaModal ref={dialogRef} />
     </div>
   );
 };

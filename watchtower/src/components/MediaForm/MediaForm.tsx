@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode, useContext, useRef } from "react";
+import { FormEvent, ReactNode, useContext } from "react";
 
 import { MediaContext } from "../../context/media-context";
 
@@ -14,13 +14,12 @@ import { Category } from "../../types/category";
 import { Media } from "../../types/media";
 
 type Props = {
+  editingMedia?: Media;
   onCancel: VoidFunction;
 };
 
-const MediaForm = ({ onCancel }: Props): ReactNode => {
-  const { createMedia, editingMedia, editMedia } = useContext(MediaContext);
-
-  const formRef = useRef<HTMLFormElement>(null);
+const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
+  const { createMedia, editMedia } = useContext(MediaContext);
 
   const cancelClickHandler = (): void => {
     onCancel();
@@ -49,11 +48,7 @@ const MediaForm = ({ onCancel }: Props): ReactNode => {
   };
 
   return (
-    <form
-      ref={formRef}
-      className={styles["create-form"]}
-      onSubmit={formSubmitHandler}
-    >
+    <form className={styles["create-form"]} onSubmit={formSubmitHandler}>
       <h3 className={styles.title}>
         {editingMedia ? "Edit Media" : "Create Media"}
       </h3>
@@ -89,7 +84,7 @@ const MediaForm = ({ onCancel }: Props): ReactNode => {
         >
           Cancel
         </Button>
-        <Button type="submit">Apply</Button>
+        <Button type="submit"> {editingMedia ? "Edit" : "Create"}</Button>
       </div>
     </form>
   );
