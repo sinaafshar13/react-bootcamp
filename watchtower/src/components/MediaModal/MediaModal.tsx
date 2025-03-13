@@ -5,6 +5,8 @@ import styles from "./MediaModal.module.css";
 import MediaForm from "../MediaForm/MediaForm";
 
 import { Media } from "../../types/media";
+import Toaster from "../Toaster/Toaster";
+import { MODAL_CONTAINER_ID } from "../../constants/id";
 
 type Props = {
   editingMedia?: Media;
@@ -35,6 +37,7 @@ const MediaModal = forwardRef<MediaModalRef, Props>(function MediaModal(
         editingMedia={editingMedia}
         onCancel={closeModal}
       />
+      <Toaster containerId={MODAL_CONTAINER_ID}/>
     </dialog>
   );
 });

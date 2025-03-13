@@ -11,6 +11,8 @@ import Select from "../../module/Select/Select";
 import Button from "../../module/Button/Button";
 
 import { Media } from "../../types/media";
+import { toast } from "react-toastify";
+import { MODAL_CONTAINER_ID } from "../../constants/id";
 
 type Props = {
   editingMedia?: Media;
@@ -33,6 +35,22 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
   const formSubmitHandler = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
+    if (!media.title) {
+      toast.error("Title is required", { containerId: MODAL_CONTAINER_ID });
+      return;
+    }
+    if (!media.description) {
+      toast.error("Description is required", { containerId: MODAL_CONTAINER_ID });
+      return;
+    }
+    if (!media.date) {
+      toast.error("Date is required", { containerId: MODAL_CONTAINER_ID });
+      return;
+    }
+    if (!media.category) {
+      toast.error("Category is required", { containerId: MODAL_CONTAINER_ID });
+      return;
+    }
     if (editingMedia) {
       editMedia(media);
     } else {
