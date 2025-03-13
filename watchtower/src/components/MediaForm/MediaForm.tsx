@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode, useContext } from "react";
+import { FormEvent, ReactNode, useContext, useEffect, useState } from "react";
 
 import { MediaContext } from "../../context/media-context";
 
@@ -10,7 +10,6 @@ import DateInput from "../../module/DateInput/DateInput";
 import Select from "../../module/Select/Select";
 import Button from "../../module/Button/Button";
 
-import { Category } from "../../types/category";
 import { Media } from "../../types/media";
 
 type Props = {
@@ -21,28 +20,26 @@ type Props = {
 const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
   const { createMedia, editMedia } = useContext(MediaContext);
 
+  const [media, setMedia] = useState<Media>(generateEmptyMedia());
+
   const cancelClickHandler = (): void => {
     onCancel();
   };
 
+  useEffect(() => {
+    setMedia(editingMedia ? { ...editingMedia } : generateEmptyMedia());
+  }, [editingMedia]);
+
   const formSubmitHandler = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-
-    const media: Media = {
-      id: editingMedia?.id ?? crypto.randomUUID(),
-      title: formData.get("title") as string,
-      description: formData.get("description") as string,
-      date: new Date(formData.get("date") as string),
-      category: formData.get("category") as Category,
-    };
 
     if (editingMedia) {
       editMedia(media);
     } else {
       createMedia(media);
     }
+
+    setMedia(generateEmptyMedia());
 
     onCancel();
   };
@@ -55,14 +52,26 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
       <TextInput
         name="title"
         placeholder="Input your book or media ..."
-        defaultValue={editingMedia?.title}
+        value={media.title}
+        onChange={(e) =>
+          setMedia((old) => ({ ...old, [e.target.name]: e.target.value }))
+        }
       ></TextInput>
       <TextArea
         name="description"
         placeholder="Input your description ..."
-        defaultValue={editingMedia?.description}
+        value={media.description}
+        onChange={(e) =>
+          setMedia((old) => ({ ...old, [e.target.name]: e.target.value }))
+        }
       ></TextArea>
-      <DateInput name="date" defaultValue={toDateString(editingMedia?.date)} />
+      <DateInput
+        name="date"
+        value={media.date}
+        onChange={(e) =>
+          setMedia((old) => ({ ...old, [e.target.name]: e.target.value }))
+        }
+      />
       <Select
         name="category"
         variant="outlined"
@@ -71,7 +80,13 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
           { value: "series", label: "Series" },
           { value: "book", label: "Book" },
         ]}
-        defaultValue={editingMedia?.category}
+        value={media.category}
+        onChange={(e) =>
+          setMedia((old) => ({
+            ...old,
+            [e.target.name]: e.target.value,
+          }))
+        }
       ></Select>
       <div className={styles.actions}>
         <Button
@@ -84,7 +99,7 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
         >
           Cancel
         </Button>
-        <Button type="submit"> {editingMedia ? "Edit" : "Create"}</Button>
+        <Button type="submit"> Apply</Button>
       </div>
     </form>
   );
@@ -92,14 +107,12 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
 
 export default MediaForm;
 
-function toDateString(date: Date | undefined): string {
-  if (!date) {
-    return "";
-  }
-
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-}
-
-function pad(text: number): string {
-  return text.toString().padStart(2, "0");
+function generateEmptyMedia(): Media {
+  return {
+    id: crypto.randomUUID(),
+    title: "",
+    description: "",
+    date: "",
+    category: "movie",
+  };
 }

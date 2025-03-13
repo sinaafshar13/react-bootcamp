@@ -6,8 +6,6 @@ import { Media } from "../types/media";
 
 import { MEDIA_LOCAL_STORAGE_KEY } from "../constants/local-storage-keys";
 
-type LocalStorageMedia = Omit<Media, "data"> & { data: string };
-
 type Props = PropsWithChildren;
 
 const MediaProvider = ({ children }: Props): ReactNode => {
@@ -51,8 +49,5 @@ const loadMediaInitialState = (): Media[] => {
   if (!items) {
     return [];
   }
-  return JSON.parse(items).map((item: LocalStorageMedia) => ({
-    ...item,
-    date: new Date(item.date),
-  }));
+  return JSON.parse(items);
 };
