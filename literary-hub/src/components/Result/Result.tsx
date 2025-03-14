@@ -1,5 +1,5 @@
 import { ReactNode, useContext, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../node_modules/react-i18next";
 
 import styles from "./Result.module.css";
 
@@ -11,8 +11,6 @@ import { Media } from "../../types/media";
 
 import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
-
-
 
 const Result = (): ReactNode => {
   const { removeMedia, media } = useContext(MediaContext);

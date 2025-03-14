@@ -13,7 +13,7 @@ import Button from "../../module/Button/Button";
 import { Media } from "../../types/media";
 import { toast } from "react-toastify";
 import { MODAL_CONTAINER_ID } from "../../constants/id";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../node_modules/react-i18next";
 
 type Props = {
   editingMedia?: Media;
@@ -124,9 +124,12 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
         >
           {t("media.actions.cancel")}
         </Button>
-        <Button type="submit"> {editingMedia
+        <Button type="submit">
+          {" "}
+          {editingMedia
             ? t("media.actions.confirm")
-            : t("media.actions.create")}</Button>
+            : t("media.actions.create")}
+        </Button>
       </div>
     </form>
   );

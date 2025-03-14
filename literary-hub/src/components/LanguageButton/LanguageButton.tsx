@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../node_modules/react-i18next";
 
 import Button from "../../module/Button/Button";
 
@@ -13,12 +13,11 @@ const LanguageButton = (): ReactNode => {
       variant="solid"
       size="large"
       shape="square"
-      onClick={() => i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")
-      }
+      onClick={() => i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")}
     >
       <IcRoundTranslate />
     </Button>
-  ); 
+  );
 };
 
 export default LanguageButton;

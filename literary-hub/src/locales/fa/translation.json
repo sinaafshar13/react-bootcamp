@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": " برج",
-    "spanTitle": " دیدبانی "
+    "title": " پاتوق ",
+    "spanTitle": " ادبی "
   },
   "languages": {
     "english": "English",
@@ -32,8 +32,8 @@
       "cancel": "لغو"
     },
     "task": {
-      "title":"عنوان",
-      "completed" : "تکمیل شده"
+      "title": "عنوان",
+      "completed": "تکمیل شده"
     }
   },
   "validation": {
@@ -53,7 +53,7 @@
   },
   "toolbar": {
     "search": {
-      "placeholder": "جستجوی عنوان  مورد نظر..."
+      "placeholder": "جستجوی عنوان مورد نظر..."
     }
   }
 }

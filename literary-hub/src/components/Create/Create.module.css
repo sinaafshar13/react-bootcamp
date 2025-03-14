@@ -2,5 +2,5 @@
   position: absolute;
 
   bottom: 1rem;
-  right: 0;
+  inset-inline-end: 0;
 }

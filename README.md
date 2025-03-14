@@ -1,3 +1,3 @@
 #React Bootcamp
 
-[Watchtower](https://watchchiz.vercel.app/)
+[Literary Hub Demo](https://watchchiz.vercel.app/)
