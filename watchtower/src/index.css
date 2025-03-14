@@ -55,16 +55,22 @@
 html {
   background-color: var(--color-surface-200);
 
-  caret-color: var(--color-primary-dark);
-  accent-color: var(--color-primary-dark);
+  caret-color: var(--color-primary-hover);
+  accent-color: var(--color-primary-hover);
 
   position: relative;
 
-  font-family: "Inter", system-ui;
+  &[lang="en"] {
+    font-family: "Inter", system-ui;
+  }
+
+  &[lang="fa"] {
+    font-family: "Vazirmatn", sans-serif;
+  }
 }
 
 main {
-  color: var(--color-text);
+  color: var(--color-surface-100);
 
   position: relative;
 

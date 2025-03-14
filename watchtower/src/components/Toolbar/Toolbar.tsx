@@ -11,12 +11,19 @@ import styles from "./Toolbar.module.css";
 import MingcuteSearchLine from "../../icons/MingcuteSearchLine";
 import MingcuteMoonLine from "../../icons/MingcuteMoonLine";
 import MingcuteSunLine from "../../icons/MingcuteSunLine";
+import IcRoundTranslate from "../../icons/IcRoundTranslate";
+import { useTranslation } from "react-i18next";
 
 const Toolbar = (): ReactNode => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
+  const { i18n } = useTranslation();
+
   return (
-    <div className={styles.toolbar}>
+    <div
+      className={styles.toolbar}
+      style={{ fontFamily: "Shadows Into Light, cursive" }}
+    >
       <TextInput
         className={styles.input}
         placeholder="Search media..."
