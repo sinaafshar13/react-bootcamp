@@ -13,7 +13,7 @@ import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
 
 const Result = (): ReactNode => {
-  const { removeMedia, media } = useContext(MediaContext);
+  const { removeMedia, filteredMedia } = useContext(MediaContext);
 
   const { t } = useTranslation();
 
@@ -34,7 +34,7 @@ const Result = (): ReactNode => {
           <span className={styles.completed}>{t("media.task.completed")}</span>
         </div>
         <ul>
-          {media.map((item) => (
+          {filteredMedia.map((item) => (
             <li key={item.id} className={styles.title}>
               <h2>{item.title}</h2>
               <div className={styles.actions}>

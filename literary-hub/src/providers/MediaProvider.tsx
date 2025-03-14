@@ -13,18 +13,27 @@ type Props = PropsWithChildren;
 const MediaProvider = ({ children }: Props): ReactNode => {
   const [media, setMedia] = useState<Media[]>(loadMediaInitialState);
 
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
   const { t } = useTranslation();
 
   useEffect(() => {
     localStorage.setItem(MEDIA_LOCAL_STORAGE_KEY, JSON.stringify(media));
   }, [media]);
 
+  const filteredMedia = media.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const setSearch = (term: string) => {
+    setSearchTerm(term);
+  };
+
   const createMedia = (media: Media): void => {
     setMedia((old) => [...old, { ...media }]);
     toast.success(t("media.actions.success.created"));
   };
- 
-  
+
   const editMedia = (media: Media): void => {
     setMedia((old) => old.map((x) => (x.id === media.id ? { ...media } : x)));
     toast.success(t("media.actions.success.edited"));
@@ -37,12 +46,13 @@ const MediaProvider = ({ children }: Props): ReactNode => {
 
   return (
     <MediaContext.Provider
-      value={{
-        media,
-        createMedia,
-        removeMedia,
-        editMedia,
-      }}
+    value={{
+      filteredMedia: filteredMedia,
+      createMedia,
+      removeMedia,
+      editMedia,
+      setSearch,  
+    }}
     >
       {children}
     </MediaContext.Provider>
