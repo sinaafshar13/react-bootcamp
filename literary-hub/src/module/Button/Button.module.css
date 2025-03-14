@@ -31,7 +31,6 @@
 
     &:hover {
       background-color: var(--button-color-hover);
-
       outline: none;
     }
   }
