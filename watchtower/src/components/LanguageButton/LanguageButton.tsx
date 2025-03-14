@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
+
 import Button from "../../module/Button/Button";
+
 import IcRoundTranslate from "../../icons/IcRoundTranslate";
 
 const LanguageButton = (): ReactNode => {

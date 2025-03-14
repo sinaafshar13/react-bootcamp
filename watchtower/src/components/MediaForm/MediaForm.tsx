@@ -13,6 +13,7 @@ import Button from "../../module/Button/Button";
 import { Media } from "../../types/media";
 import { toast } from "react-toastify";
 import { MODAL_CONTAINER_ID } from "../../constants/id";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   editingMedia?: Media;
@@ -21,6 +22,8 @@ type Props = {
 
 const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
   const { createMedia, editMedia } = useContext(MediaContext);
+
+  const { t } = useTranslation();
 
   const [media, setMedia] = useState<Media>(generateEmptyMedia());
 
@@ -40,7 +43,9 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
       return;
     }
     if (!media.description) {
-      toast.error("Description is required", { containerId: MODAL_CONTAINER_ID });
+      toast.error("Description is required", {
+        containerId: MODAL_CONTAINER_ID,
+      });
       return;
     }
     if (!media.date) {
@@ -65,11 +70,13 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
   return (
     <form className={styles["create-form"]} onSubmit={formSubmitHandler}>
       <h3 className={styles.title}>
-        {editingMedia ? "Edit Media" : "Create Media"}
+        {editingMedia
+          ? t("media.create.edit", { title: editingMedia.title })
+          : t("media.create.title")}
       </h3>
       <TextInput
         name="title"
-        placeholder="Input your book or media ..."
+        placeholder={t("media.form.title.placeholder")}
         value={media.title}
         onChange={(e) =>
           setMedia((old) => ({ ...old, [e.target.name]: e.target.value }))
@@ -77,7 +84,7 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
       ></TextInput>
       <TextArea
         name="description"
-        placeholder="Input your description ..."
+        placeholder={t("media.form.description.placeholder")}
         value={media.description}
         onChange={(e) =>
           setMedia((old) => ({ ...old, [e.target.name]: e.target.value }))
@@ -94,9 +101,9 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
         name="category"
         variant="outlined"
         options={[
-          { value: "movie", label: "Movie" },
-          { value: "series", label: "Series" },
-          { value: "book", label: "Book" },
+          { value: "movie", label: t("media.form.category.movie") },
+          { value: "series", label: t("media.form.category.series") },
+          { value: "book", label: t("media.form.category.book") },
         ]}
         value={media.category}
         onChange={(e) =>
@@ -115,9 +122,11 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
           shape="rectangle"
           size="large"
         >
-          Cancel
+          {t("media.actions.cancel")}
         </Button>
-        <Button type="submit"> Apply</Button>
+        <Button type="submit"> {editingMedia
+            ? t("media.actions.confirm")
+            : t("media.actions.create")}</Button>
       </div>
     </form>
   );

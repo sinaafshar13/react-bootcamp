@@ -1,4 +1,59 @@
 {
-  "title": "Watch",
-  "spanTitle": "Tower"
+  "app": {
+    "title": "Watch",
+    "spanTitle": "Tower"
+  },
+  "languages": {
+    "english": "English",
+    "farsi": "فارسی"
+  },
+  "media": {
+    "create": {
+      "title": "Create a New Media",
+      "edit": "Edit {{title}}"
+    },
+    "form": {
+      "title": {
+        "placeholder": "Input your title..."
+      },
+      "description": {
+        "placeholder": "Input your description..."
+      },
+      "category": {
+        "all": "All",
+        "movie": "Movie",
+        "series": "Series",
+        "book": "Book"
+      }
+    },
+    "actions": {
+      "create": "Create",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "task": {
+      "title":"Title",
+      "completed" : "Completed"
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "date": {
+      "required": "Date is required",
+      "invalid": "Invalid date format"
+    },
+    "title": {
+      "required": "Title is required",
+      "length": "Title must be between {{minTitleLength}} and {{maxTitleLength}} characters"
+    },
+    "description": {
+      "required": "Description is required",
+      "length": "Description must be less than {{maxDescriptionLength}} characters"
+    }
+  },
+  "toolbar": {
+    "search": {
+      "placeholder": "Search media..."
+    }
+  }
 }

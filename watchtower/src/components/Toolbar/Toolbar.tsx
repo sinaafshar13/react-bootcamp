@@ -1,4 +1,5 @@
 import { ReactNode, useContext } from "react";
+import { useTranslation } from "react-i18next";
 
 import { ThemeContext } from "../../context/theme-context";
 
@@ -15,20 +16,23 @@ import MingcuteSunLine from "../../icons/MingcuteSunLine";
 
 const Toolbar = (): ReactNode => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const { t } = useTranslation();
+
   return (
     <div className={styles.toolbar}>
       <TextInput
         className={styles.input}
-        placeholder="Search media..."
+        placeholder={t("toolbar.search.placeholder")}
         suffixIcon={<MingcuteSearchLine />}
       />
       <Select
         variant="solid"
         options={[
-          { value: "all", label: "All" },
-          { value: "movie", label: "Movie" },
-          { value: "series", label: "Series" },
-          { value: "book", label: "Book" },
+          { value: "all", label: t("media.form.category.all") },
+          { value: "movie", label: t("media.form.category.movie") },
+          { value: "series", label: t("media.form.category.series") },
+          { value: "book", label: t("media.form.category.book") },
         ]}
       ></Select>
       <LanguageButton />

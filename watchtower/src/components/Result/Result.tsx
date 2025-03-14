@@ -1,20 +1,23 @@
 import { ReactNode, useContext, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Result.module.css";
 
 import Button from "../../module/Button/Button";
+import MediaModal from "../MediaModal/MediaModal";
 
 import { MediaContext } from "../../context/media-context";
+import { Media } from "../../types/media";
 
 import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
 
-import { Media } from "../../types/media";
 
-import MediaModal from "../MediaModal/MediaModal";
 
 const Result = (): ReactNode => {
   const { removeMedia, media } = useContext(MediaContext);
+
+  const { t } = useTranslation();
 
   const [editingMedia, setEditingMedia] = useState<Media | null>(null);
 
@@ -29,8 +32,8 @@ const Result = (): ReactNode => {
     <>
       <div className={styles.result}>
         <div className={styles.task}>
-          <span className={styles.ahead}>Ahead</span>
-          <span className={styles.completed}>Completed</span>
+          <span className={styles.title}>{t("media.task.title")}</span>
+          <span className={styles.completed}>{t("media.task.completed")}</span>
         </div>
         <ul>
           {media.map((item) => (

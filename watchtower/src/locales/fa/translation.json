@@ -1,4 +1,59 @@
 {
-  "title": " برج",
-  "spanTitle": " مراقبت "
+  "app": {
+    "title": " برج",
+    "spanTitle": " دیدبانی "
+  },
+  "languages": {
+    "english": "English",
+    "farsi": "فارسی"
+  },
+  "media": {
+    "create": {
+      "title": "ایجاد عنوان جدید",
+      "edit": "ویرایش {{title}}"
+    },
+    "form": {
+      "title": {
+        "placeholder": "عنوان خود را وارد کنید..."
+      },
+      "description": {
+        "placeholder": "توضیحات خود را وارد کنید..."
+      },
+      "category": {
+        "all": "همه",
+        "movie": "فیلم",
+        "series": "سریال",
+        "book": "کتاب"
+      }
+    },
+    "actions": {
+      "create": "ایجاد",
+      "confirm": "تایید",
+      "cancel": "لغو"
+    },
+    "task": {
+      "title":"عنوان",
+      "completed" : "تکمیل شده"
+    }
+  },
+  "validation": {
+    "required": "این فیلد الزامی است",
+    "date": {
+      "required": "تاریخ الزامی است",
+      "invalid": "فرمت تاریخ نامعتبر است"
+    },
+    "title": {
+      "required": "عنوان الزامی است",
+      "length": "عنوان باید بین {{minTitleLength}} و {{maxTitleLength}} کاراکتر باشد"
+    },
+    "description": {
+      "required": "توضیحات الزامی است",
+      "length": "توضیحات باید کمتر از {{maxDescriptionLength}} کاراکتر باشد"
+    }
+  },
+  "toolbar": {
+    "search": {
+      "placeholder": "جستجوی عنوان  مورد نظر..."
+    }
+  }
 }
