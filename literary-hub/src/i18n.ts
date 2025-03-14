@@ -9,7 +9,7 @@ import {
   getLanguageFromLocalStorage,
 } from "./utils/i18n-utils";
 
-export const defaultNS = "translation"
+export const defaultNS = "translation";
 
 export const resources = {
   en: {
@@ -24,7 +24,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    ns:["translation"],
+    ns: ["translation"],
     defaultNS,
     fallbackLng: "en",
     lng: getLanguageFromLocalStorage(),

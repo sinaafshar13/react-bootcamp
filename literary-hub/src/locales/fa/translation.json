@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": " پاتوق ",
-    "spanTitle": " ادبی "
+    "title": "پاتوقِ ",
+    "spanTitle": " اَدبی "
   },
   "languages": {
     "english": "English",
@@ -29,7 +29,12 @@
     "actions": {
       "create": "ایجاد",
       "confirm": "تایید",
-      "cancel": "لغو"
+      "cancel": "لغو",
+      "success": {
+        "created": "{{title}} با موفقیت ایجاد شد",
+        "edited": "تغییرات {{title}} با موفقیت ایجاد شد",
+        "removed": "{{title}} حذف شد"
+      }
     },
     "task": {
       "title": "عنوان",

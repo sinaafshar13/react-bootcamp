@@ -1,16 +1,19 @@
 import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 import { MediaContext } from "../context/media-context";
 
 import { Media } from "../types/media";
 
 import { MEDIA_LOCAL_STORAGE_KEY } from "../constants/local-storage-keys";
-import { toast } from "react-toastify";
 
 type Props = PropsWithChildren;
 
 const MediaProvider = ({ children }: Props): ReactNode => {
   const [media, setMedia] = useState<Media[]>(loadMediaInitialState);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     localStorage.setItem(MEDIA_LOCAL_STORAGE_KEY, JSON.stringify(media));
@@ -18,18 +21,18 @@ const MediaProvider = ({ children }: Props): ReactNode => {
 
   const createMedia = (media: Media): void => {
     setMedia((old) => [...old, { ...media }]);
-    toast.success("Media created successfully!")
-
+    toast.success(t("media.actions.success.created"));
   };
-
+ 
+  
   const editMedia = (media: Media): void => {
     setMedia((old) => old.map((x) => (x.id === media.id ? { ...media } : x)));
-    toast.success("Media edited successfully!")
+    toast.success(t("media.actions.success.edited"));
   };
 
   const removeMedia = (id: string): void => {
     setMedia((old) => old.filter((x) => x.id !== id));
-    toast.success("Media removed!")
+    toast.success(t("media.actions.success.removed"));
   };
 
   return (

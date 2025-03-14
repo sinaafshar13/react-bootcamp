@@ -13,6 +13,7 @@ const Toaster = (props: Props): ReactElement => {
     <ToastContainer
       position="bottom-right"
       autoClose={5000}
+      limit={3}
       hideProgressBar={false}
       newestOnTop
       closeOnClick={false}

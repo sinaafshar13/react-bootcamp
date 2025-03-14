@@ -29,11 +29,16 @@
     "actions": {
       "create": "Create",
       "confirm": "Confirm",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "success": {
+        "created": "Media created successfully",
+        "edited": "Media edited successfully",
+        "removed": "Media removed"
+      }
     },
     "task": {
-      "title":"Title",
-      "completed" : "Completed"
+      "title": "Title",
+      "completed": "Completed"
     }
   },
   "validation": {

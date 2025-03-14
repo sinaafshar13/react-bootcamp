@@ -2,10 +2,10 @@ import { forwardRef, ReactElement, useImperativeHandle, useRef } from "react";
 
 import styles from "./MediaModal.module.css";
 
+import Toaster from "../Toaster/Toaster";
 import MediaForm from "../MediaForm/MediaForm";
 
 import { Media } from "../../types/media";
-import Toaster from "../Toaster/Toaster";
 import { MODAL_CONTAINER_ID } from "../../constants/id";
 
 type Props = {
