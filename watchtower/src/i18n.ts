@@ -4,6 +4,11 @@ import { initReactI18next } from "react-i18next";
 import enTranslation from "./locales/en/translation.json";
 import faTranslation from "./locales/fa/translation.json";
 
+import {
+  changeLanguage,
+  getLanguageFromLocalStorage,
+} from "./utils/i18n-utils";
+
 const resources = {
   en: {
     translation: enTranslation,
@@ -17,13 +22,16 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "fa",
-    fallbackLng:"en",
+    fallbackLng: "en",
+    lng: getLanguageFromLocalStorage(),
 
     interpolation: {
       escapeValue: false,
     },
   })
   .then();
+
+changeLanguage(i18n.language);
+i18n.on("languageChanged", changeLanguage);
 
 export default i18n;

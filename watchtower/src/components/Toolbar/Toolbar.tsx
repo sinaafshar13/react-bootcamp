@@ -5,25 +5,18 @@ import { ThemeContext } from "../../context/theme-context";
 import TextInput from "../../module/TextInput/TextInput";
 import Select from "../../module/Select/Select";
 import Button from "../../module/Button/Button";
+import LanguageButton from "../LanguageButton/LanguageButton";
 
 import styles from "./Toolbar.module.css";
 
 import MingcuteSearchLine from "../../icons/MingcuteSearchLine";
 import MingcuteMoonLine from "../../icons/MingcuteMoonLine";
 import MingcuteSunLine from "../../icons/MingcuteSunLine";
-import IcRoundTranslate from "../../icons/IcRoundTranslate";
-import { useTranslation } from "react-i18next";
 
 const Toolbar = (): ReactNode => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-
-  const { i18n } = useTranslation();
-
   return (
-    <div
-      className={styles.toolbar}
-      style={{ fontFamily: "Shadows Into Light, cursive" }}
-    >
+    <div className={styles.toolbar}>
       <TextInput
         className={styles.input}
         placeholder="Search media..."
@@ -38,6 +31,7 @@ const Toolbar = (): ReactNode => {
           { value: "book", label: "Book" },
         ]}
       ></Select>
+      <LanguageButton />
       <Button
         variant="solid"
         size="large"

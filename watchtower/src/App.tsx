@@ -10,15 +10,8 @@ import Result from "./components/Result/Result";
 import Create from "./components/Create/Create";
 import ThemeProvider from "./providers/ThemeProvider";
 import Toaster from "./components/Toaster/Toaster";
-import { useTranslation } from "react-i18next";
 
 const App = (): ReactNode => {
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    document.documentElement.lang = i18n.language;
-  }, [i18n.language]);
-
   return (
     <ThemeProvider>
       <MediaProvider>
