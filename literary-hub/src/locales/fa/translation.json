@@ -32,7 +32,7 @@
       "cancel": "لغو",
       "success": {
         "created": "{{title}} با موفقیت ایجاد شد",
-        "edited": "تغییرات {{title}} با موفقیت ایجاد شد",
+        "edited": "تغییرات {{title}} با موفقیت انجام شد",
         "removed": "{{title}} حذف شد"
       }
     },

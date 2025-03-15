@@ -31,9 +31,9 @@
       "confirm": "Confirm",
       "cancel": "Cancel",
       "success": {
-        "created": "Media created successfully",
-        "edited": "Media edited successfully",
-        "removed": "Media removed"
+        "created": "{{title}} created successfully",
+        "edited": "{{title}} edited successfully",
+        "removed": "{{title}} removed"
       }
     },
     "task": {
