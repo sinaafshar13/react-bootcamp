@@ -1,7 +1,7 @@
 .select {
   position: relative;
 
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
   select {
     appearance: none;
@@ -64,7 +64,6 @@
     &::after {
       color: var(--color-gray-100);
     }
-   
   }
 
   &.outlined {

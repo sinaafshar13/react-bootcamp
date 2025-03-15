@@ -16,7 +16,7 @@ export type MediaModalRef = Pick<HTMLDialogElement, "showModal" | "close">;
 
 const MediaModal = forwardRef<MediaModalRef, Props>(function MediaModal(
   { editingMedia },
-  outerRef
+  outerRef,
 ): ReactElement {
   const innerRef = useRef<HTMLDialogElement>(null);
 
@@ -33,11 +33,8 @@ const MediaModal = forwardRef<MediaModalRef, Props>(function MediaModal(
 
   return (
     <dialog ref={innerRef} className={styles["media-modal"]}>
-      <MediaForm
-        editingMedia={editingMedia}
-        onCancel={closeModal}
-      />
-      <Toaster containerId={MODAL_CONTAINER_ID}/>
+      <MediaForm editingMedia={editingMedia} onCancel={closeModal} />
+      <Toaster containerId={MODAL_CONTAINER_ID} />
     </dialog>
   );
 });

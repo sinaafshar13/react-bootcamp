@@ -1,35 +1,35 @@
 .date-input {
-    overflow: hidden;
+  overflow: hidden;
 
-    background-color: var(--color-surface-300);
-  
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  
-    padding: 0.5rem;
-  
-    border-radius: 0.5rem;
-  
-    input {
-      flex: 1 1 0;
-  
-      background-color: transparent;
-      color: var(--color-primary-hover);
-  
-      block-size: 1.5em;
-  
-      border: none;
-  
-      font-size: 1rem;
-      line-height: 1;
-  
-      &:focus {
-        outline: none;
-      }
-    }
-  
-    &:focus-within {
-      outline: 2px solid var(--color-primary-outline);
+  background-color: var(--color-surface-300);
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+
+  input {
+    flex: 1 1 0;
+
+    background-color: transparent;
+    color: var(--color-primary-hover);
+
+    block-size: 1.5em;
+
+    border: none;
+
+    font-size: 1rem;
+    line-height: 1;
+
+    &:focus {
+      outline: none;
     }
   }
+
+  &:focus-within {
+    outline: 2px solid var(--color-primary-outline);
+  }
+}

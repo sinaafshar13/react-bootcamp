@@ -10,10 +10,14 @@ type Variant = "solid" | "outlined";
 
 type Props = ComponentProps<"select"> & {
   variant?: Variant;
-  options: SelectOption[];  
+  options: SelectOption[];
 };
 
-const Select = ({ variant = "solid", options , ...otherProps }: Props): ReactNode => {
+const Select = ({
+  variant = "solid",
+  options,
+  ...otherProps
+}: Props): ReactNode => {
   return (
     <div className={clsx(styles.select, styles[variant])}>
       <select {...otherProps} name="category" id="category">

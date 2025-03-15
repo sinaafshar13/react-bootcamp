@@ -10,7 +10,7 @@ type Color = "primary" | "danger";
 type Shape = "rectangle" | "square" | "circle";
 
 type Props = ComponentProps<"button"> & {
-  color?:Color;
+  color?: Color;
   variant?: Variant;
   size?: Size;
   shape?: Shape;
@@ -33,7 +33,7 @@ const Button = ({
         styles[size],
         styles[color],
         styles[shape],
-        className
+        className,
       )}
       {...otherProps}
     >

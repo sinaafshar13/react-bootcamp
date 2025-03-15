@@ -22,7 +22,7 @@ const MediaProvider = ({ children }: Props): ReactNode => {
   }, [media]);
 
   const filteredMedia = media.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const setSearch = (term: string) => {
@@ -46,13 +46,13 @@ const MediaProvider = ({ children }: Props): ReactNode => {
 
   return (
     <MediaContext.Provider
-    value={{
-      filteredMedia: filteredMedia,
-      createMedia,
-      removeMedia,
-      editMedia,
-      setSearch,  
-    }}
+      value={{
+        filteredMedia: filteredMedia,
+        createMedia,
+        removeMedia,
+        editMedia,
+        setSearch,
+      }}
     >
       {children}
     </MediaContext.Provider>

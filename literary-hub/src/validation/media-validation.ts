@@ -71,9 +71,7 @@ function showValidationError(messageKey: string): void {
 }
 
 export const mediaValidation = (media: Media): boolean => {
-
   for (const rule of validationRules) {
-    
     if (!rule.isValid(media)) {
       showValidationError(rule.messageKey);
 

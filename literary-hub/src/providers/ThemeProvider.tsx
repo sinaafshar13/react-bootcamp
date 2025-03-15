@@ -10,7 +10,6 @@ type Props = PropsWithChildren;
 
 const ThemeProvider = ({ children }: Props): ReactNode => {
   const [theme, setTheme] = useState<Theme>(loadThemeInitialState);
-  
 
   useEffect(() => {
     localStorage.setItem(THEME_LOCAL_STORAGE_KEY, theme);
