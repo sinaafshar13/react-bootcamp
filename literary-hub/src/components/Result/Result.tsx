@@ -5,13 +5,13 @@ import styles from "./Result.module.css";
 
 import Button from "../../module/Button/Button";
 import MediaModal from "../MediaModal/MediaModal";
+import Create from "../Create/Create";
 
 import { MediaContext } from "../../context/media-context";
 import { Media } from "../../types/media";
 
 import MingcuteEditLine from "../../icons/MingcuteEditLine";
 import MingcuteDelete2Line from "../../icons/MingcuteDelete2Line";
-import Create from "../Create/Create";
 
 const Result = (): ReactNode => {
   const { removeMedia, filteredMedia } = useContext(MediaContext);

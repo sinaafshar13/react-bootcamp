@@ -1,4 +1,5 @@
 import { createContext } from "react";
+
 import { Media } from "../types/media";
 
 type MediaContextValue = {

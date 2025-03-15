@@ -3,7 +3,7 @@ import { useTranslation } from "../../../node_modules/react-i18next";
 
 import styles from "./Header.module.css";
 
-import Logo from "../../icons/logo";
+import Logo from "../../icons/Logo";
 
 const Header = (): ReactNode => {
   const { t } = useTranslation();

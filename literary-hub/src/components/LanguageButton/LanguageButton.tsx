@@ -3,7 +3,7 @@ import { useTranslation } from "../../../node_modules/react-i18next";
 
 import Button from "../../module/Button/Button";
 
-import IcRoundTranslate from "../../icons/IcRoundTranslate";
+import IonMdGlobe from "../../icons/IonMdGlobe";
 
 const LanguageButton = (): ReactNode => {
   const { i18n } = useTranslation();
@@ -15,7 +15,7 @@ const LanguageButton = (): ReactNode => {
       shape="square"
       onClick={() => i18n.changeLanguage(i18n.language === "fa" ? "en" : "fa")}
     >
-      <IcRoundTranslate />
+      <IonMdGlobe />
     </Button>
   );
 };

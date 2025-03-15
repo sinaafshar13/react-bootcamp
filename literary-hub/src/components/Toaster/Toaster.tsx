@@ -1,5 +1,4 @@
 import { ReactElement, useContext } from "react";
-
 import { Bounce, ToastContainer, ToastContainerProps } from "react-toastify";
 
 import { ThemeContext } from "../../context/theme-context";
