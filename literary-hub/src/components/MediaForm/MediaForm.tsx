@@ -106,12 +106,11 @@ const MediaForm = ({ editingMedia, onCancel }: Props): ReactNode => {
           color="danger"
           variant="outlined"
           shape="rectangle"
-          size="large"
+          size="medium"
         >
           {t("media.actions.cancel")}
         </Button>
-        <Button type="submit">
-          {" "}
+        <Button size="medium" type="submit">
           {editingMedia
             ? t("media.actions.confirm")
             : t("media.actions.create")}

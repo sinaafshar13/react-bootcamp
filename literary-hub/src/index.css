@@ -58,8 +58,6 @@ html {
   caret-color: var(--color-primary-hover);
   accent-color: var(--color-primary-hover);
 
-  position: relative;
-
   &[lang="en"] {
     font-family: "Inter", system-ui;
   }
@@ -80,7 +78,7 @@ main {
 
   margin-inline: auto;
 
-  height: 80dvh;
+  height: 100%;
 
   z-index: 2;
 }

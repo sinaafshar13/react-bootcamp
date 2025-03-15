@@ -72,7 +72,7 @@
   }
 
   &.medium {
-    block-size: 2.25rem;
+    block-size: 2.75rem;
 
     svg {
       block-size: 1.25rem;
@@ -87,11 +87,11 @@
       block-size: 1.5rem;
       inline-size: auto;
     }
-  }
+  } 
 
   &.rectangle {
     &.medium {
-      padding-inline: 0.5rem;
+      padding-inline: 1.5rem;
     }
 
     &.large {
