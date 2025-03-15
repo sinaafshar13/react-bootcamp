@@ -43,6 +43,7 @@ const MediaProvider = ({ children }: Props): ReactNode => {
     const mediaItem = media.find((x) => x.id === id);
 
     setMedia((old) => old.filter((x) => x.id !== id));
+    
     toast.success(t("media.actions.success.removed", { title : mediaItem}));
   };
 
