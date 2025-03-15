@@ -22,7 +22,7 @@ const MediaProvider = ({ children }: Props): ReactNode => {
   }, [media]);
 
   const filteredMedia = media.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase()),
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const setSearch = (term: string) => {
@@ -31,17 +31,18 @@ const MediaProvider = ({ children }: Props): ReactNode => {
 
   const createMedia = (media: Media): void => {
     setMedia((old) => [...old, { ...media }]);
-    toast.success(t("media.actions.success.created"));
+    toast.success(t("media.actions.success.created", { title: media.title }));
   };
 
   const editMedia = (media: Media): void => {
     setMedia((old) => old.map((x) => (x.id === media.id ? { ...media } : x)));
-    toast.success(t("media.actions.success.edited"));
+    toast.success(t("media.actions.success.edited", { title: media.title }));
   };
 
   const removeMedia = (id: string): void => {
+    const title = media.filter((x) => x.id !== id);
     setMedia((old) => old.filter((x) => x.id !== id));
-    toast.success(t("media.actions.success.removed"));
+    toast.success(t("media.actions.success.removed", { title }));
   };
 
   return (
