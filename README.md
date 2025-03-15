@@ -1,3 +1,3 @@
 #React Bootcamp
 
-[Literary Hub Demo](https://watchchiz.vercel.app/)
+[Literary Hub Demo](https://literary-hub.vercel.app/)

@@ -12,7 +12,7 @@
       "title": "Create a New Media",
       "edit": "Edit {{title}}"
     },
-    "form": {
+    "form": { 
       "title": {
         "placeholder": "Input your title..."
       },
