@@ -70,8 +70,6 @@ html {
 main {
   color: var(--color-surface-100);
 
-  position: relative;
-
   margin-top: 163px;
 
   inline-size: min(46rem, 100% - 2rem);
