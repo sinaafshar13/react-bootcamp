@@ -5,7 +5,6 @@ import styles from "./Result.module.css";
 
 import Button from "../../module/Button/Button";
 import MediaModal from "../MediaModal/MediaModal";
-import Create from "../Create/Create";
 
 import { MediaContext } from "../../context/media-context";
 import { Media } from "../../types/media";
@@ -61,7 +60,7 @@ const Result = (): ReactNode => {
             </li>
           ))}
         </ul>
-        <Create />
+
       </div>
       <MediaModal ref={modalRef} editingMedia={editingMedia ?? undefined} />
     </>

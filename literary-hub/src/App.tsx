@@ -9,6 +9,8 @@ import Toolbar from "./components/Toolbar/Toolbar";
 import Result from "./components/Result/Result";
 import ThemeProvider from "./providers/ThemeProvider";
 import Toaster from "./components/Toaster/Toaster";
+import Create from "./components/Create/Create";
+
 
 const App = (): ReactNode => {
   return (
@@ -19,6 +21,7 @@ const App = (): ReactNode => {
           <Toolbar />
           <Result />
         </main>
+        <Create />
         <Toaster />
       </MediaProvider>
     </ThemeProvider>
