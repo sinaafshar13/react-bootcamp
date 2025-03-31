@@ -1,23 +1,22 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement } from "react";
+
 import AttractionList from "../../components/AttractionList/AttractionList";
+import Filters from "../../components/Filters/Filters";
+
+import styles from "./Home.module.css";
+import FiltersProvider from "../../providers/FiltersProvider";
+import AttractionsProvider from "../../providers/AttractionsProvider";
 
 const Home = (): ReactElement => {
-  const [attractions, setAttractions] = useState([]);
-
-  useEffect(() => {
-    const fetchAttraction = async (): Promise<void> => {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL}/attraction`
-      );
-      const data = await response.json();
-      setAttractions(data);
-    };
-    fetchAttraction().then;
-  }, []);
   return (
-    <>
-      <AttractionList attractions={attractions} />
-    </>
+    <FiltersProvider>
+      <AttractionsProvider>
+        <div className={styles.home}>
+          <Filters />
+          <AttractionList />
+        </div>
+      </AttractionsProvider>
+    </FiltersProvider>
   );
 };
 

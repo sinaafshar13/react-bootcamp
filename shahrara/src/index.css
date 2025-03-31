@@ -1,9 +1,9 @@
 :root {
   color-scheme: light;
 
-  --color-primary: hsl(200, 50%, 50%);
+  --color-primary: hsl(146, 50%, 50%);
   --color-primary-fade: hsl(160, 50%, 95%);
-  --color-primary-hover: hsl(200, 50%, 40%);
+  --color-primary-hover: hsl(154, 50%, 40%);
 
   --color-surface-300: hsl(0, 0%, 99%);
   --color-surface-400: hsl(0, 0%, 97%);
